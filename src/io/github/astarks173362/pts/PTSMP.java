@@ -63,7 +63,7 @@ public class PTSMP extends JPanel implements ActionListener {
 				cmd[0] = "cmd.exe";
 				cmd[1] = "/C";
 				cmd[2] = "start";
-				cmd[3] = "https://github.com/astarks173362/PythagoreanTheoremSolver";
+				cmd[3] = "https://github.com/astarks173362/Pythagorean-Theorem-Solver";
 				Runtime.getRuntime().exec(cmd);
 			}catch (Exception e) {
 				e.printStackTrace();
