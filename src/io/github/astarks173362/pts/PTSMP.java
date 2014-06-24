@@ -31,8 +31,6 @@ public class PTSMP extends JPanel implements ActionListener {
 			double aValue = Math.sqrt(Math.pow(cValue, 2) - Math.pow(bValue, 2));
 			NumberFormat nf = NumberFormat.getNumberInstance();
 			textField.setText(nf.format(aValue));
-			PTSAF frame = new PTSAF();
-			frame.setVisible(true);
 
 		}else if (source == btnSolveB) {
 			double cValue = Double.parseDouble(textField_2.getText());
@@ -40,8 +38,6 @@ public class PTSMP extends JPanel implements ActionListener {
 			double bValue = Math.sqrt(Math.pow(cValue, 2) - Math.pow(aValue, 2));
 			NumberFormat nf = NumberFormat.getNumberInstance();
 			textField_1.setText(nf.format(bValue));
-			PTSBF frame = new PTSBF();
-			frame.setVisible(true);
 
 		}else if (source == btnSolveC) {
 			double aValue = Double.parseDouble(textField.getText());
@@ -49,8 +45,6 @@ public class PTSMP extends JPanel implements ActionListener {
 			double cValue = Math.sqrt(Math.pow(aValue, 2) + Math.pow(bValue, 2));
 			NumberFormat nf = NumberFormat.getNumberInstance();
 			textField_2.setText(nf.format(cValue));
-			PTSCF frame = new PTSCF();
-			frame.setVisible(true);
 
 		}else if (source == btnReset) {
 			textField.setText("");
