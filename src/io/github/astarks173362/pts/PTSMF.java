@@ -1,12 +1,13 @@
 package io.github.astarks173362.pts;
 
-import java.awt.*;
-import javax.swing.*;
+import java.awt.EventQueue;
 import java.awt.Toolkit;
+
+import javax.swing.JFrame;
 
 @SuppressWarnings("serial")
 public class PTSMF extends JFrame {
-	
+
 	private PTSMP Panel;
 
 	public static void main(String[] args) {
@@ -23,7 +24,8 @@ public class PTSMF extends JFrame {
 	}
 
 	public PTSMF() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage(PTSMF.class.getResource("/resources/IconImage.jpg")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(
+				PTSMF.class.getResource("/resources/IconImage.jpg")));
 		setTitle("Pythagorean Theorem Solver - Andrew Starks");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
