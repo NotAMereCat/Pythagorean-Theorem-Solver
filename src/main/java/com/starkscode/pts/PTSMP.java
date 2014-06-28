@@ -1,4 +1,4 @@
-package io.github.astarks173362.pts;
+package com.starkscode.pts;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -28,6 +28,7 @@ public class PTSMP extends JPanel implements ActionListener {
 	private JButton btnSolveC;
 	private JButton btnReset;
 	private JButton btnGitHub;
+	private JLabel lblStarkscode;
 
 	public void actionPerformed(ActionEvent event) {
 		Object source = event.getSource();
@@ -75,70 +76,68 @@ public class PTSMP extends JPanel implements ActionListener {
 	}
 
 	public PTSMP() {
-		setBackground(new Color(240, 230, 140));
+		setBackground(Color.ORANGE);
 		setLayout(null);
 
 		textLabel = new JLabel("VALUE   A");
-		textLabel.setBounds(20, 65, 70, 19);
+		textLabel.setBounds(20, 80, 70, 19);
 		add(textLabel);
 
 		textLabel_1 = new JLabel("VALUE   B");
-		textLabel_1.setBounds(20, 124, 70, 19);
+		textLabel_1.setBounds(20, 136, 70, 19);
 		add(textLabel_1);
 
 		textLabel_2 = new JLabel("VALUE   C");
-		textLabel_2.setBounds(20, 183, 70, 19);
+		textLabel_2.setBounds(20, 192, 70, 19);
 		add(textLabel_2);
 
 		textLabel_3 = new JLabel("Pythagorean Theorem Solver");
-		textLabel_3.setFont(new Font("Microsoft New Tai Lue", Font.PLAIN, 20));
-		textLabel_3.setBounds(10, 11, 278, 31);
+		textLabel_3.setFont(new Font("Microsoft New Tai Lue", Font.PLAIN, 15));
+		textLabel_3.setBounds(10, 41, 196, 19);
 		add(textLabel_3);
 
 		textField = new JTextField(15);
-		textField.setToolTipText("Given value for side a.");
 		textField.setActionCommand("");
-		textField.setBounds(100, 62, 126, 24);
+		textField.setBounds(100, 77, 126, 24);
 		add(textField);
 
 		textField_1 = new JTextField(15);
-		textField_1.setToolTipText("Given value for side b.");
-		textField_1.setBounds(100, 121, 126, 24);
+		textField_1.setBounds(100, 133, 126, 24);
 		add(textField_1);
 
 		textField_2 = new JTextField(15);
-		textField_2.setToolTipText("Given value for side c.");
-		textField_2.setBounds(100, 180, 126, 24);
+		textField_2.setBounds(100, 189, 126, 24);
 		add(textField_2);
 
 		btnSolveA = new JButton("SOLVE A");
-		btnSolveA.setToolTipText("Solve for side a.");
-		btnSolveA.setBounds(292, 18, 89, 23);
+		btnSolveA.setBounds(255, 18, 89, 23);
 		btnSolveA.addActionListener(this);
 		add(btnSolveA);
 
 		btnSolveB = new JButton("SOLVE B");
-		btnSolveB.setToolTipText("Solve for side b.");
-		btnSolveB.setBounds(292, 61, 89, 23);
+		btnSolveB.setBounds(255, 61, 89, 23);
 		btnSolveB.addActionListener(this);
 		add(btnSolveB);
 
 		btnSolveC = new JButton("SOLVE C");
-		btnSolveC.setToolTipText("Solve for side c.");
-		btnSolveC.setBounds(292, 104, 89, 23);
+		btnSolveC.setBounds(255, 104, 89, 23);
 		btnSolveC.addActionListener(this);
 		add(btnSolveC);
 
 		btnReset = new JButton("RESET");
-		btnReset.setToolTipText("Reset value boxes.");
-		btnReset.setBounds(292, 147, 89, 23);
+		btnReset.setBounds(255, 147, 89, 23);
 		btnReset.addActionListener(this);
 		add(btnReset);
 
 		btnGitHub = new JButton("GITHUB");
-		btnGitHub.setToolTipText("Open GitHub repository for project.");
-		btnGitHub.setBounds(292, 190, 89, 23);
+		btnGitHub.setBounds(255, 190, 89, 23);
 		btnGitHub.addActionListener(this);
 		add(btnGitHub);
+
+		lblStarkscode = new JLabel("StarksCode");
+		lblStarkscode.setForeground(Color.WHITE);
+		lblStarkscode.setFont(new Font("Source Code Pro", Font.PLAIN, 22));
+		lblStarkscode.setBounds(10, 0, 130, 30);
+		add(lblStarkscode);
 	}
 }
