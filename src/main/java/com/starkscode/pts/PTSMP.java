@@ -76,7 +76,7 @@ public class PTSMP extends JPanel implements ActionListener {
 	}
 
 	public PTSMP() {
-		setBackground(Color.ORANGE);
+		setBackground(new Color(205, 92, 92));
 		setLayout(null);
 
 		textLabel = new JLabel("VALUE   A");
