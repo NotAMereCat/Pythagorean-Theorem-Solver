@@ -30,7 +30,7 @@ Follow me on twitter for updates <a href="https://twitter.com/astarks173362">@as
 <h1>License</h1>
 <p>The MIT License (MIT)</p>
 
-<p>Copyright (c) 2014 Andrew Starks</p>
+<p>Copyright (c) 2014 StarksCode</p>
 
 <p>Permission is hereby granted, free of charge, to any person obtaining a copy<br>
 of this software and associated documentation files (the "Software"), to deal<br>
