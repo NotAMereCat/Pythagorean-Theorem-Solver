@@ -46,41 +46,39 @@ public class PTSMP extends JPanel {
 		btnSolve.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				double aValue = Double.parseDouble(textField.getText());
-				double bValue = Double.parseDouble(textField_1.getText());
-				double cValue = Double.parseDouble(textField_2.getText());
+				double sideA = Double.parseDouble(textField.getText());
+				double sideB = Double.parseDouble(textField_1.getText());
+				double sideC = Double.parseDouble(textField_2.getText());
 
-				if (aValue == 0) {
-					double cValue1 = cValue;
-					double bValue1 = bValue;
-					double aValue1 = Math.sqrt(Math.pow(cValue1, 2)
-							- Math.pow(bValue1, 2));
+				if (sideA == 0) {
+					double cValue = sideC;
+					double bValue = sideB;
+					double aValue = Math.sqrt(Math.pow(cValue, 2)
+							- Math.pow(bValue, 2));
 					NumberFormat nf = NumberFormat.getNumberInstance();
-					textField.setText(nf.format(aValue1));
+					textField.setText(nf.format(aValue));
 					JOptionPane.showMessageDialog(null, "Leg (a) equals "
 							+ textField.getText());
 
-				} else if (bValue == 0) {
-					double cValue2 = cValue;
-					double aValue2 = aValue;
-					double bValue2 = Math.sqrt(Math.pow(cValue2, 2)
-							- Math.pow(aValue2, 2));
+				} else if (sideB == 0) {
+					double cValue = sideC;
+					double aValue = sideA;
+					double bValue = Math.sqrt(Math.pow(cValue, 2)
+							- Math.pow(aValue, 2));
 					NumberFormat nf = NumberFormat.getNumberInstance();
-					textField_1.setText(nf.format(bValue2));
+					textField_1.setText(nf.format(bValue));
 					JOptionPane.showMessageDialog(null, "Leg (b) equals "
 							+ textField_1.getText());
 
-				} else if (cValue == 0) {
-					double aValue3 = aValue;
-					double bValue3 = bValue;
-					double cValue3 = Math.sqrt(Math.pow(aValue3, 2)
-							+ Math.pow(bValue3, 2));
+				} else if (sideC == 0) {
+					double aValue = sideA;
+					double bValue = sideB;
+					double cValue = Math.sqrt(Math.pow(aValue, 2)
+							+ Math.pow(bValue, 2));
 					NumberFormat nf = NumberFormat.getNumberInstance();
-					textField_2.setText(nf.format(cValue3));
-					JOptionPane.showMessageDialog(
-							null,
-							"Hypotenuse (c) equals "
-									+ textField_2.getText());
+					textField_2.setText(nf.format(cValue));
+					JOptionPane.showMessageDialog(null,
+							"Hypotenuse (c) equals " + textField_2.getText());
 				}
 			}
 		});
@@ -129,9 +127,9 @@ public class PTSMP extends JPanel {
 		add(lblHypoC);
 
 		lblInputZeroInto = new JLabel(
-				"Input zero into the box you are trying to solver for.");
+				"Input zero in the box you are trying to solver for.");
 		lblInputZeroInto.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblInputZeroInto.setBounds(10, 91, 320, 23);
+		lblInputZeroInto.setBounds(20, 91, 320, 23);
 		add(lblInputZeroInto);
 	}
 }
