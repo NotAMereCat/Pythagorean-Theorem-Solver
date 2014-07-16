@@ -24,6 +24,8 @@ public class PTSMP extends JPanel {
 	private JButton btn;
 	private JButton btn_1;
 	private JButton btn_2;
+	
+	NumberFormat nf = NumberFormat.getNumberInstance();
 
 	public PTSMP() {
 		setLayout(null);
@@ -55,13 +57,11 @@ public class PTSMP extends JPanel {
 		btn = new JButton("SOLVE");
 		btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
 				if (textField.getText().equals("")) {
 					double cValue = Double.parseDouble(textField_2.getText());
 					double bValue = Double.parseDouble(textField_1.getText());
 					double aValue = Math.sqrt(Math.pow(cValue, 2)
 							- Math.pow(bValue, 2));
-					NumberFormat nf = NumberFormat.getNumberInstance();
 					textField.setText(nf.format(aValue));
 					JOptionPane.showMessageDialog(null, "Leg (a) equals "
 							+ textField.getText());
@@ -71,7 +71,6 @@ public class PTSMP extends JPanel {
 					double aValue = Double.parseDouble(textField.getText());
 					double bValue = Math.sqrt(Math.pow(cValue, 2)
 							- Math.pow(aValue, 2));
-					NumberFormat nf = NumberFormat.getNumberInstance();
 					textField_1.setText(nf.format(bValue));
 					JOptionPane.showMessageDialog(null, "Leg (b) equals "
 							+ textField_1.getText());
@@ -81,7 +80,6 @@ public class PTSMP extends JPanel {
 					double bValue = Double.parseDouble(textField_1.getText());
 					double cValue = Math.sqrt(Math.pow(aValue, 2)
 							+ Math.pow(bValue, 2));
-					NumberFormat nf = NumberFormat.getNumberInstance();
 					textField_2.setText(nf.format(cValue));
 					JOptionPane.showMessageDialog(null,
 							"Hypotenuse (c) equals " + textField_2.getText());
