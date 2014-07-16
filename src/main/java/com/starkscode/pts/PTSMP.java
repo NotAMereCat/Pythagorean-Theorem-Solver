@@ -1,6 +1,5 @@
 package com.starkscode.pts;
 
-import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.NumberFormat;
@@ -14,21 +13,32 @@ import javax.swing.JTextField;
 @SuppressWarnings("serial")
 public class PTSMP extends JPanel {
 
-	public JTextField textField;
-	public JTextField textField_1;
-	public JTextField textField_2;
+	private JLabel lbl;
+	private JLabel lbl_1;
+	private JLabel lbl_2;
+
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
 
 	private JButton btn;
 	private JButton btn_1;
 	private JButton btn_2;
 
-	private JLabel lbl;
-	private JLabel lbl_1;
-	private JLabel lbl_2;
-	private JLabel lbl_3;
-
 	public PTSMP() {
 		setLayout(null);
+
+		lbl = new JLabel("Leg (a)");
+		lbl.setBounds(40, 5, 46, 14);
+		add(lbl);
+
+		lbl_1 = new JLabel("Leg (b)");
+		lbl_1.setBounds(150, 5, 46, 14);
+		add(lbl_1);
+
+		lbl_2 = new JLabel("Hypotenuse (c)");
+		lbl_2.setBounds(237, 5, 86, 14);
+		add(lbl_2);
 
 		textField = new JTextField(15);
 		textField.setBounds(10, 25, 100, 23);
@@ -46,13 +56,9 @@ public class PTSMP extends JPanel {
 		btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				double sideA = Double.parseDouble(textField.getText());
-				double sideB = Double.parseDouble(textField_1.getText());
-				double sideC = Double.parseDouble(textField_2.getText());
-
-				if (sideA == 0) {
-					double cValue = sideC;
-					double bValue = sideB;
+				if (textField.getText().equals("")) {
+					double cValue = Double.parseDouble(textField_2.getText());
+					double bValue = Double.parseDouble(textField_1.getText());
 					double aValue = Math.sqrt(Math.pow(cValue, 2)
 							- Math.pow(bValue, 2));
 					NumberFormat nf = NumberFormat.getNumberInstance();
@@ -60,9 +66,9 @@ public class PTSMP extends JPanel {
 					JOptionPane.showMessageDialog(null, "Leg (a) equals "
 							+ textField.getText());
 
-				} else if (sideB == 0) {
-					double cValue = sideC;
-					double aValue = sideA;
+				} else if (textField_1.getText().equals("")) {
+					double cValue = Double.parseDouble(textField_2.getText());
+					double aValue = Double.parseDouble(textField.getText());
 					double bValue = Math.sqrt(Math.pow(cValue, 2)
 							- Math.pow(aValue, 2));
 					NumberFormat nf = NumberFormat.getNumberInstance();
@@ -70,9 +76,9 @@ public class PTSMP extends JPanel {
 					JOptionPane.showMessageDialog(null, "Leg (b) equals "
 							+ textField_1.getText());
 
-				} else if (sideC == 0) {
-					double aValue = sideA;
-					double bValue = sideB;
+				} else if (textField_2.getText().equals("")) {
+					double aValue = Double.parseDouble(textField.getText());
+					double bValue = Double.parseDouble(textField_1.getText());
 					double cValue = Math.sqrt(Math.pow(aValue, 2)
 							+ Math.pow(bValue, 2));
 					NumberFormat nf = NumberFormat.getNumberInstance();
@@ -113,23 +119,5 @@ public class PTSMP extends JPanel {
 		});
 		btn_2.setBounds(230, 59, 100, 23);
 		add(btn_2);
-
-		lbl = new JLabel("Leg (a)");
-		lbl.setBounds(10, 3, 46, 14);
-		add(lbl);
-
-		lbl_1 = new JLabel("Leg (b)");
-		lbl_1.setBounds(120, 3, 46, 14);
-		add(lbl_1);
-
-		lbl_2 = new JLabel("Hypotenuse (c)");
-		lbl_2.setBounds(230, 3, 86, 14);
-		add(lbl_2);
-
-		lbl_3 = new JLabel(
-				"Input zero in the box you are trying to solver for.");
-		lbl_3.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lbl_3.setBounds(20, 91, 302, 18);
-		add(lbl_3);
 	}
 }
