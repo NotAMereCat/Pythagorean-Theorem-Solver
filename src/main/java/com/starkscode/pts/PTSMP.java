@@ -57,7 +57,7 @@ public class PTSMP extends JPanel {
 							- Math.pow(bValue1, 2));
 					NumberFormat nf = NumberFormat.getNumberInstance();
 					textField.setText(nf.format(aValue1));
-					JOptionPane.showMessageDialog(null, "The Leg (a) equals "
+					JOptionPane.showMessageDialog(null, "Leg (a) equals "
 							+ textField.getText());
 
 				} else if (bValue == 0) {
@@ -67,7 +67,7 @@ public class PTSMP extends JPanel {
 							- Math.pow(aValue2, 2));
 					NumberFormat nf = NumberFormat.getNumberInstance();
 					textField_1.setText(nf.format(bValue2));
-					JOptionPane.showMessageDialog(null, "The Leb (b) equals "
+					JOptionPane.showMessageDialog(null, "Leg (b) equals "
 							+ textField_1.getText());
 
 				} else if (cValue == 0) {
@@ -79,7 +79,7 @@ public class PTSMP extends JPanel {
 					textField_2.setText(nf.format(cValue3));
 					JOptionPane.showMessageDialog(
 							null,
-							"The Hypotenuse (c) equals "
+							"Hypotenuse (c) equals "
 									+ textField_2.getText());
 				}
 			}
