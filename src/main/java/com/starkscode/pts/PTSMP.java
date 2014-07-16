@@ -18,14 +18,14 @@ public class PTSMP extends JPanel {
 	public JTextField textField_1;
 	public JTextField textField_2;
 
-	private JButton btnSolve;
-	private JButton btnReset;
-	private JButton btnGitHub;
+	private JButton btn;
+	private JButton btn_1;
+	private JButton btn_2;
 
-	private JLabel lblLegA;
-	private JLabel lblLegB;
-	private JLabel lblHypoC;
-	private JLabel lblInputZeroInto;
+	private JLabel lbl;
+	private JLabel lbl_1;
+	private JLabel lbl_2;
+	private JLabel lbl_3;
 
 	public PTSMP() {
 		setLayout(null);
@@ -42,8 +42,8 @@ public class PTSMP extends JPanel {
 		textField_2.setBounds(230, 25, 100, 23);
 		add(textField_2);
 
-		btnSolve = new JButton("SOLVE");
-		btnSolve.addActionListener(new ActionListener() {
+		btn = new JButton("SOLVE");
+		btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
 				double sideA = Double.parseDouble(textField.getText());
@@ -82,22 +82,22 @@ public class PTSMP extends JPanel {
 				}
 			}
 		});
-		btnSolve.setBounds(10, 57, 100, 23);
-		add(btnSolve);
+		btn.setBounds(10, 57, 100, 23);
+		add(btn);
 
-		btnReset = new JButton("RESET");
-		btnReset.addActionListener(new ActionListener() {
+		btn_1 = new JButton("RESET");
+		btn_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				textField.setText("");
 				textField_1.setText("");
 				textField_2.setText("");
 			}
 		});
-		btnReset.setBounds(120, 59, 100, 23);
-		add(btnReset);
+		btn_1.setBounds(120, 59, 100, 23);
+		add(btn_1);
 
-		btnGitHub = new JButton("GITHUB");
-		btnGitHub.addActionListener(new ActionListener() {
+		btn_2 = new JButton("GITHUB");
+		btn_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					String[] cmd = new String[4];
@@ -111,25 +111,25 @@ public class PTSMP extends JPanel {
 				}
 			}
 		});
-		btnGitHub.setBounds(230, 59, 100, 23);
-		add(btnGitHub);
+		btn_2.setBounds(230, 59, 100, 23);
+		add(btn_2);
 
-		lblLegA = new JLabel("Leg (a)");
-		lblLegA.setBounds(10, 3, 46, 14);
-		add(lblLegA);
+		lbl = new JLabel("Leg (a)");
+		lbl.setBounds(10, 3, 46, 14);
+		add(lbl);
 
-		lblLegB = new JLabel("Leg (b)");
-		lblLegB.setBounds(120, 3, 46, 14);
-		add(lblLegB);
+		lbl_1 = new JLabel("Leg (b)");
+		lbl_1.setBounds(120, 3, 46, 14);
+		add(lbl_1);
 
-		lblHypoC = new JLabel("Hypotenuse (c)");
-		lblHypoC.setBounds(230, 3, 86, 14);
-		add(lblHypoC);
+		lbl_2 = new JLabel("Hypotenuse (c)");
+		lbl_2.setBounds(230, 3, 86, 14);
+		add(lbl_2);
 
-		lblInputZeroInto = new JLabel(
+		lbl_3 = new JLabel(
 				"Input zero in the box you are trying to solver for.");
-		lblInputZeroInto.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblInputZeroInto.setBounds(20, 91, 320, 23);
-		add(lblInputZeroInto);
+		lbl_3.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lbl_3.setBounds(20, 91, 302, 18);
+		add(lbl_3);
 	}
 }
