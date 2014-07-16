@@ -24,7 +24,7 @@ public class PTSMP extends JPanel {
 	private JButton btn;
 	private JButton btn_1;
 	private JButton btn_2;
-	
+
 	NumberFormat nf = NumberFormat.getNumberInstance();
 
 	public PTSMP() {
@@ -63,8 +63,8 @@ public class PTSMP extends JPanel {
 					double aValue = Math.sqrt(Math.pow(cValue, 2)
 							- Math.pow(bValue, 2));
 					textField.setText(nf.format(aValue));
-					JOptionPane.showMessageDialog(null, "Leg (a) equals "
-							+ textField.getText());
+					JOptionPane.showMessageDialog(null,
+							"Leg (a) equals " + nf.format(aValue));
 
 				} else if (textField_1.getText().equals("")) {
 					double cValue = Double.parseDouble(textField_2.getText());
@@ -72,8 +72,8 @@ public class PTSMP extends JPanel {
 					double bValue = Math.sqrt(Math.pow(cValue, 2)
 							- Math.pow(aValue, 2));
 					textField_1.setText(nf.format(bValue));
-					JOptionPane.showMessageDialog(null, "Leg (b) equals "
-							+ textField_1.getText());
+					JOptionPane.showMessageDialog(null,
+							"Leg (b) equals " + nf.format(bValue));
 
 				} else if (textField_2.getText().equals("")) {
 					double aValue = Double.parseDouble(textField.getText());
@@ -82,11 +82,11 @@ public class PTSMP extends JPanel {
 							+ Math.pow(bValue, 2));
 					textField_2.setText(nf.format(cValue));
 					JOptionPane.showMessageDialog(null,
-							"Hypotenuse (c) equals " + textField_2.getText());
+							"Hypotenuse (c) equals " + nf.format(cValue));
 				}
 			}
 		});
-		btn.setBounds(10, 57, 100, 23);
+		btn.setBounds(10, 59, 100, 23);
 		add(btn);
 
 		btn_1 = new JButton("RESET");
