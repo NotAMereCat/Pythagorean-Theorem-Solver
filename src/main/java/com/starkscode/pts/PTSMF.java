@@ -4,6 +4,7 @@ import java.awt.EventQueue;
 import java.awt.Toolkit;
 
 import javax.swing.JFrame;
+import javax.swing.UIManager;
 
 @SuppressWarnings("serial")
 public class PTSMF extends JFrame {
@@ -24,13 +25,22 @@ public class PTSMF extends JFrame {
 	}
 
 	public PTSMF() {
+		setTheme();
 		setIconImage(Toolkit.getDefaultToolkit().getImage(
 				PTSMF.class.getResource("/assets/pts/images/IconImage.png")));
-		setTitle("Pythagorean Theorem Solver - StarksCode");
+		setTitle("Pythagorean Theorem Solver");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 367, 258);
+		setBounds(100, 100, 344, 148);
 		Panel = new PTSMP();
 		setContentPane(Panel);
+	}
+
+	public void setTheme() {
+		try {
+			UIManager.setLookAndFeel("com.alee.laf.WebLookAndFeel");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
