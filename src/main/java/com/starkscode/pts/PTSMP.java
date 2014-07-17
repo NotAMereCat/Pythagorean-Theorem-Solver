@@ -1,5 +1,6 @@
 package com.starkscode.pts;
 
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.NumberFormat;
@@ -33,30 +34,31 @@ public class PTSMP extends JPanel {
 		setLayout(null);
 
 		label = new JLabel("Leg (a)");
-		label.setBounds(40, 5, 46, 14);
+		label.setBounds(42, 5, 40, 14);
 		add(label);
 
 		label_1 = new JLabel("Leg (b)");
-		label_1.setBounds(150, 5, 46, 14);
+		label_1.setBounds(152, 5, 41, 14);
 		add(label_1);
 
 		label_2 = new JLabel("Hypotenuse (c)");
-		label_2.setBounds(237, 5, 86, 14);
+		label_2.setBounds(240, 5, 86, 14);
 		add(label_2);
 
 		textField = new JTextField(15);
-		textField.setBounds(10, 25, 100, 23);
+		textField.setBounds(10, 25, 105, 24);
 		add(textField);
 
 		textField_1 = new JTextField(15);
-		textField_1.setBounds(120, 25, 100, 23);
+		textField_1.setBounds(120, 25, 105, 24);
 		add(textField_1);
 
 		textField_2 = new JTextField(15);
-		textField_2.setBounds(230, 25, 100, 23);
+		textField_2.setBounds(230, 25, 105, 24);
 		add(textField_2);
 
 		button = new JButton("SOLVE");
+		button.setFont(new Font("Arial", Font.BOLD, 14));
 		button.setIcon(new ImageIcon(PTSMP.class
 				.getResource("/assets/pts/images/solve.png")));
 		button.addActionListener(new ActionListener() {
@@ -90,10 +92,11 @@ public class PTSMP extends JPanel {
 				}
 			}
 		});
-		button.setBounds(10, 59, 100, 23);
+		button.setBounds(10, 60, 105, 24);
 		add(button);
 
 		button_1 = new JButton("RESET");
+		button_1.setFont(new Font("Arial", Font.BOLD, 14));
 		button_1.setIcon(new ImageIcon(PTSMP.class
 				.getResource("/assets/pts/images/reset.png")));
 		button_1.addActionListener(new ActionListener() {
@@ -104,10 +107,11 @@ public class PTSMP extends JPanel {
 				textField.requestFocus();
 			}
 		});
-		button_1.setBounds(120, 59, 100, 23);
+		button_1.setBounds(120, 60, 105, 24);
 		add(button_1);
 
 		button_2 = new JButton("GITHUB");
+		button_2.setFont(new Font("Arial", Font.BOLD, 14));
 		button_2.setIcon(new ImageIcon(PTSMP.class
 				.getResource("/assets/pts/images/GitHub.png")));
 		button_2.addActionListener(new ActionListener() {
@@ -124,7 +128,7 @@ public class PTSMP extends JPanel {
 				}
 			}
 		});
-		button_2.setBounds(230, 59, 100, 23);
+		button_2.setBounds(230, 60, 105, 24);
 		add(button_2);
 
 		button_3 = new JButton("");
@@ -145,7 +149,7 @@ public class PTSMP extends JPanel {
 		});
 		button_3.setIcon(new ImageIcon(PTSMP.class
 				.getResource("/assets/pts/images/help.png")));
-		button_3.setBounds(340, 59, 23, 23);
+		button_3.setBounds(340, 60, 23, 24);
 		add(button_3);
 	}
 }
