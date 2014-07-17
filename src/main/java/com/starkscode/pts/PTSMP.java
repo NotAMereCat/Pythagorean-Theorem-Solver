@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.NumberFormat;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -13,34 +14,35 @@ import javax.swing.JTextField;
 @SuppressWarnings("serial")
 public class PTSMP extends JPanel {
 
-	private JLabel lbl;
-	private JLabel lbl_1;
-	private JLabel lbl_2;
+	private JLabel label;
+	private JLabel label_1;
+	private JLabel label_2;
 
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
 
-	private JButton btn;
-	private JButton btn_1;
-	private JButton btn_2;
+	private JButton button;
+	private JButton button_1;
+	private JButton button_2;
+	private JButton button_3;
 
 	NumberFormat nf = NumberFormat.getNumberInstance();
 
 	public PTSMP() {
 		setLayout(null);
 
-		lbl = new JLabel("Leg (a)");
-		lbl.setBounds(40, 5, 46, 14);
-		add(lbl);
+		label = new JLabel("Leg (a)");
+		label.setBounds(40, 5, 46, 14);
+		add(label);
 
-		lbl_1 = new JLabel("Leg (b)");
-		lbl_1.setBounds(150, 5, 46, 14);
-		add(lbl_1);
+		label_1 = new JLabel("Leg (b)");
+		label_1.setBounds(150, 5, 46, 14);
+		add(label_1);
 
-		lbl_2 = new JLabel("Hypotenuse (c)");
-		lbl_2.setBounds(237, 5, 86, 14);
-		add(lbl_2);
+		label_2 = new JLabel("Hypotenuse (c)");
+		label_2.setBounds(237, 5, 86, 14);
+		add(label_2);
 
 		textField = new JTextField(15);
 		textField.setBounds(10, 25, 100, 23);
@@ -54,54 +56,61 @@ public class PTSMP extends JPanel {
 		textField_2.setBounds(230, 25, 100, 23);
 		add(textField_2);
 
-		btn = new JButton("SOLVE");
-		btn.addActionListener(new ActionListener() {
+		button = new JButton("SOLVE");
+		button.setIcon(new ImageIcon(PTSMP.class
+				.getResource("/assets/pts/images/solve.png")));
+		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (textField.getText().equals("")) {
-					double cValue = Double.parseDouble(textField_2.getText());
-					double bValue = Double.parseDouble(textField_1.getText());
-					double aValue = Math.sqrt(Math.pow(cValue, 2)
-							- Math.pow(bValue, 2));
-					textField.setText(nf.format(aValue));
+					double hypoC = Double.parseDouble(textField_2.getText());
+					double legB = Double.parseDouble(textField_1.getText());
+					double legA = Math.sqrt(Math.pow(hypoC, 2)
+							- Math.pow(legB, 2));
+					textField.setText(nf.format(legA));
 					JOptionPane.showMessageDialog(null,
-							"Leg (a) equals " + nf.format(aValue));
+							"Leg (a) equals " + nf.format(legA));
 
 				} else if (textField_1.getText().equals("")) {
-					double cValue = Double.parseDouble(textField_2.getText());
-					double aValue = Double.parseDouble(textField.getText());
-					double bValue = Math.sqrt(Math.pow(cValue, 2)
-							- Math.pow(aValue, 2));
-					textField_1.setText(nf.format(bValue));
+					double hypoC = Double.parseDouble(textField_2.getText());
+					double legA = Double.parseDouble(textField.getText());
+					double legB = Math.sqrt(Math.pow(hypoC, 2)
+							- Math.pow(legA, 2));
+					textField_1.setText(nf.format(legB));
 					JOptionPane.showMessageDialog(null,
-							"Leg (b) equals " + nf.format(bValue));
+							"Leg (b) equals " + nf.format(legB));
 
 				} else if (textField_2.getText().equals("")) {
-					double aValue = Double.parseDouble(textField.getText());
-					double bValue = Double.parseDouble(textField_1.getText());
-					double cValue = Math.sqrt(Math.pow(aValue, 2)
-							+ Math.pow(bValue, 2));
-					textField_2.setText(nf.format(cValue));
+					double legA = Double.parseDouble(textField.getText());
+					double legB = Double.parseDouble(textField_1.getText());
+					double hypoC = Math.sqrt(Math.pow(legA, 2)
+							+ Math.pow(legB, 2));
+					textField_2.setText(nf.format(hypoC));
 					JOptionPane.showMessageDialog(null,
-							"Hypotenuse (c) equals " + nf.format(cValue));
+							"Hypotenuse (c) equals " + nf.format(hypoC));
 				}
 			}
 		});
-		btn.setBounds(10, 59, 100, 23);
-		add(btn);
+		button.setBounds(10, 59, 100, 23);
+		add(button);
 
-		btn_1 = new JButton("RESET");
-		btn_1.addActionListener(new ActionListener() {
+		button_1 = new JButton("RESET");
+		button_1.setIcon(new ImageIcon(PTSMP.class
+				.getResource("/assets/pts/images/reset.png")));
+		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				textField.setText("");
 				textField_1.setText("");
 				textField_2.setText("");
+				textField.requestFocus();
 			}
 		});
-		btn_1.setBounds(120, 59, 100, 23);
-		add(btn_1);
+		button_1.setBounds(120, 59, 100, 23);
+		add(button_1);
 
-		btn_2 = new JButton("GITHUB");
-		btn_2.addActionListener(new ActionListener() {
+		button_2 = new JButton("GITHUB");
+		button_2.setIcon(new ImageIcon(PTSMP.class
+				.getResource("/assets/pts/images/GitHub.png")));
+		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					String[] cmd = new String[4];
@@ -115,7 +124,28 @@ public class PTSMP extends JPanel {
 				}
 			}
 		});
-		btn_2.setBounds(230, 59, 100, 23);
-		add(btn_2);
+		button_2.setBounds(230, 59, 100, 23);
+		add(button_2);
+
+		button_3 = new JButton("");
+		button_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String html = "<html><body width=";
+				String message = "<h1>Help</h1>"
+
+						+ "<p>If you are trying to solve for leg (a) then you need to have the lengths of the hypotenuse (c) and leg (b). Put those lengths in the boxes marked 'Hypotenuse (c)' and 'Leg (b)' then hit solve. Make sure the hypotenuse is the larger number or you will receive 'NaN' for an answer.<br><br>"
+						+ "<p>If you are trying to solve for leg (b) then you need to have the lengths of the hypotenuse (c) and leg (a). Put those lengths in the boxes marked 'Hypotenuse (c)' and 'Leg (a)' then hit solve. Make sure the hypotenuse is the larger number or you will receive 'NaN' for an answer.<br><br>"
+						+ "<p>If you are trying to solve for the hypotenuse (c) then you need to have the lengths of leg (a) and leg (b). Put those lengths in the boxes marked 'Leg (a)' and 'Leg (b)' then hit solve.<br><br>";
+
+				int width = 350;
+				String popup = html + width + message;
+
+				JOptionPane.showMessageDialog(null, popup);
+			}
+		});
+		button_3.setIcon(new ImageIcon(PTSMP.class
+				.getResource("/assets/pts/images/help.png")));
+		button_3.setBounds(340, 59, 23, 23);
+		add(button_3);
 	}
 }
