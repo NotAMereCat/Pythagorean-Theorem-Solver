@@ -131,7 +131,7 @@ public class PTSMP extends JPanel {
 		button_2.setBounds(230, 60, 105, 24);
 		add(button_2);
 
-		button_3 = new JButton("");
+		button_3 = new JButton();
 		button_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String html = "<html><body width=";
