@@ -104,7 +104,6 @@ public class PTSMP extends JPanel {
 				textField.setText("");
 				textField_1.setText("");
 				textField_2.setText("");
-				textField.requestFocus();
 			}
 		});
 		button_1.setBounds(120, 60, 105, 24);
@@ -137,11 +136,14 @@ public class PTSMP extends JPanel {
 				String html = "<html><body width=";
 				String message = "<h1>Help</h1>"
 
+						+ "<h2>How to solve for Leg (a)</h2>"
 						+ "<p>If you are trying to solve for leg (a) then you need to have the lengths of the hypotenuse (c) and leg (b). Put those lengths in the boxes marked 'Hypotenuse (c)' and 'Leg (b)' then hit solve. Make sure the hypotenuse is the larger number or you will receive 'NaN' for an answer.<br><br>"
+						+ "<h2>How to solve for Leg (b)</h2>"
 						+ "<p>If you are trying to solve for leg (b) then you need to have the lengths of the hypotenuse (c) and leg (a). Put those lengths in the boxes marked 'Hypotenuse (c)' and 'Leg (a)' then hit solve. Make sure the hypotenuse is the larger number or you will receive 'NaN' for an answer.<br><br>"
+						+ "<h2>How to solve for Hypotenuse (c)</h2>"
 						+ "<p>If you are trying to solve for the hypotenuse (c) then you need to have the lengths of leg (a) and leg (b). Put those lengths in the boxes marked 'Leg (a)' and 'Leg (b)' then hit solve.<br><br>";
 
-				int width = 350;
+				int width = 400;
 				String popup = html + width + message;
 
 				JOptionPane.showMessageDialog(null, popup);
