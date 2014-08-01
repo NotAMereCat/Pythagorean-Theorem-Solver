@@ -72,7 +72,8 @@ public class PTSMP extends JPanel {
 					JOptionPane.showMessageDialog(null,
 							"Leg (a) equals " + nf.format(legA));
 
-				} else if (textField_1.getText().equals("")) {
+				}
+				if (textField_1.getText().equals("")) {
 					double hypoC = Double.parseDouble(textField_2.getText());
 					double legA = Double.parseDouble(textField.getText());
 					double legB = Math.sqrt(Math.pow(hypoC, 2)
@@ -81,7 +82,8 @@ public class PTSMP extends JPanel {
 					JOptionPane.showMessageDialog(null,
 							"Leg (b) equals " + nf.format(legB));
 
-				} else if (textField_2.getText().equals("")) {
+				}
+				if (textField_2.getText().equals("")) {
 					double legA = Double.parseDouble(textField.getText());
 					double legB = Double.parseDouble(textField_1.getText());
 					double hypoC = Math.sqrt(Math.pow(legA, 2)
