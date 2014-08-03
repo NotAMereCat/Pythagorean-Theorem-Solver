@@ -118,12 +118,10 @@ public class PTSMP extends JPanel {
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					String[] cmd = new String[4];
-					cmd[0] = "cmd.exe";
-					cmd[1] = "/C";
-					cmd[2] = "start";
-					cmd[3] = "https://github.com/astarks173362/Pythagorean-Theorem-Solver";
-					Runtime.getRuntime().exec(cmd);
+					java.awt.Desktop
+							.getDesktop()
+							.browse(java.net.URI
+									.create("https://github.com/astarks173362/Pythagorean-Theorem-Solver"));
 				} catch (Exception exception) {
 					exception.printStackTrace();
 				}
