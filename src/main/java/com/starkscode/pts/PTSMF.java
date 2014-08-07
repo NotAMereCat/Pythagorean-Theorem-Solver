@@ -5,6 +5,7 @@ import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 import javax.swing.UIManager;
+import javax.swing.UIManager.LookAndFeelInfo;
 
 @SuppressWarnings("serial")
 public class PTSMF extends JFrame {
@@ -22,10 +23,19 @@ public class PTSMF extends JFrame {
 				}
 			}
 		});
+		try {
+			for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+				if ("Nimbus".equals(info.getName())) {
+					UIManager.setLookAndFeel(info.getClassName());
+					break;
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	public PTSMF() {
-		setTheme();
 		setIconImage(Toolkit.getDefaultToolkit().getImage(
 				PTSMF.class.getResource("/assets/pts/images/IconImage.png")));
 		setTitle("Pythagorean Theorem Solver");
@@ -35,13 +45,5 @@ public class PTSMF extends JFrame {
 		setLocationRelativeTo(null);
 		Panel = new PTSMP();
 		setContentPane(Panel);
-	}
-
-	public void setTheme() {
-		try {
-			UIManager.setLookAndFeel("com.alee.laf.WebLookAndFeel");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 	}
 }
