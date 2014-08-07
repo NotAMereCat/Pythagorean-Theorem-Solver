@@ -1,7 +1,6 @@
 package com.starkscode.pts;
 
 import java.awt.EventQueue;
-import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 import javax.swing.UIManager;
@@ -36,8 +35,6 @@ public class PTSMF extends JFrame {
 	}
 
 	public PTSMF() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage(
-				PTSMF.class.getResource("/assets/pts/images/IconImage.png")));
 		setTitle("Pythagorean Theorem Solver");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
