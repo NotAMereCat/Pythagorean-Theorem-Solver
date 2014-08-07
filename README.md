@@ -5,11 +5,11 @@ I've created a Java application that solves the length for any side given that t
 
 <h1>Code Example</h1>
 <p>The program is based on a simple equation:<br>
-<code>double legA = Double.parseDouble(textField.getText());<br>
-double legB = Double.parseDouble(textField_1.getText());<br>
-double hypoC = Math.sqrt(Math.pow(legA, 2) + Math.pow(legB, 2));<br>
-NumberFormat nf = NumberFormat.getNumberInstance();<br>
-textField_2.setText(nf.format(hypoC));</p></code>
+<code>double legA = Double.parseDouble(textField.getText());</code><br>
+<code>double legB = Double.parseDouble(textField_1.getText());</code><br>
+<code>double hypoC = Math.sqrt(Math.pow(legA, 2) + Math.pow(legB, 2));</code><br>
+<code>NumberFormat nf = NumberFormat.getNumberInstance();</code><br>
+<code>textField_2.setText(nf.format(hypoC));</code></p>
 
 <h1>Motivation</h1>
 <p>This project began as a simple idea shortly after I had learned about the Pythagorean Theorem in my math class.<br>
