@@ -12,8 +12,9 @@ I've created a Java application that solves the length for any side given that t
 <code>textField_2.setText(nf.format(hypoC));</code></p>
 
 <h1>Motivation</h1>
-<p>This project began as a simple idea shortly after I had learned about the Pythagorean Theorem in my math class.<br>
-Everyday I would get more and more ideas of how to make it better, until it turned into what it is now.<br></p>
+<p>This project began shortly after I had learned about the Pythagorean Theorem in my math class.
+Everyday I would get more and more ideas of how to make it better, until it turned into what it is now.
+I have learned so much about Java by working on this project and I'm super excited to see what other things can be added to it.</p>
 
 <h1>Installation</h1>
 <p>Download and installation are simple.<br>
