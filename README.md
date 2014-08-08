@@ -1,19 +1,21 @@
-<h2 style="text-align: right;">Synopsis</h2>
-<p style="text-align: right;">The Pythagorean Theorem was one of the earliest theorems known to ancient civilizations.
+<h2>Synopsis</h2>
+The Pythagorean Theorem was one of the earliest theorems known to ancient civilizations.
 This famous theorem is named for the Greek mathematician and philosopher, Pythagoras.
-I've created a Java application that solves the length for any side given that the user has the other two.</p>
+I've created a Java application that solves the length for any side given that the user has the other two.
 
 <h2>Motivation</h2>
-This project began shortly after I had learned about the Pythagorean Theorem in my math class. Everyday I would get more and more ideas of how to make it better, until it turned into what it is now. I have learned so much about Java by working on this project and I'm super excited to see what other things can be added to it.
+This project began shortly after I had learned about the Pythagorean Theorem in my math class.
+Everyday I would get more and more ideas of how to make it better, until it turned into what it is now.
+I have learned so much about Java by working on this project and I'm super excited to see what other things can be added to it.
 
-<h2 style="text-align: right;">Code Example</h2>
-<p style="text-align: right;">The source code can be downloaded from the <a href="https://github.com/astarks173362/Pythagorean-Theorem-Solver">project page at GitHub</a>.
+<h2>Code Example</h2>
+The source code can be downloaded from the <a href="https://github.com/astarks173362/Pythagorean-Theorem-Solver">project page at GitHub</a>.
 The program is based on a simple equation:
 <code>double legA = Double.parseDouble(textField.getText());
 double legB = Double.parseDouble(textField_1.getText());
 double hypoC = Math.sqrt(Math.pow(legA, 2) + Math.pow(legB, 2));
 NumberFormat nf = NumberFormat.getNumberInstance();
-textField_2.setText(nf.format(hypoC));</code></p>
+textField_2.setText(nf.format(hypoC));</code>
 
 <h2>Contributing to the Pythagorean Theorem Solver</h2>
 <h3>Reporting issues</h3>
@@ -32,8 +34,8 @@ Pull request guidelines:
 	<li>Use a topic branch and open the pull request against the <code>master</code> branch.</li>
 </ol>
 
-<h2 style="text-align: right;">Installation</h2>
-<p style="text-align: right;">Download and installation are simple.
+<h2>Installation</h2>
+Download and installation are simple.
 Go <a href="http://adf.ly/pPBxg">here</a> to download the file, wait for five seconds to go by then click the "Skip Ad" button in the top right corner.
 To run it you must have Java Runtime Environment installed.
-Open the file and enjoy!</p>
+Open the file and enjoy!
