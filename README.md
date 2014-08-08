@@ -9,12 +9,12 @@ Everyday I would get more and more ideas of how to make it better, until it turn
 I have learned so much about Java by working on this project and I'm super excited to see what other things can be added to it.
 
 <h2>Code Example</h2>
-The source code can be downloaded from the <a href="https://github.com/astarks173362/Pythagorean-Theorem-Solver">project page at GitHub</a>.
-The program is based on a simple equation:
-<code>double legA = Double.parseDouble(textField.getText());
-double legB = Double.parseDouble(textField_1.getText());
-double hypoC = Math.sqrt(Math.pow(legA, 2) + Math.pow(legB, 2));
-NumberFormat nf = NumberFormat.getNumberInstance();
+The source code can be downloaded from the <a href="https://github.com/astarks173362/Pythagorean-Theorem-Solver">project page at GitHub</a>.<br>
+The program is based on a simple equation:<br>
+<code>double legA = Double.parseDouble(textField.getText());<br>
+double legB = Double.parseDouble(textField_1.getText());<br>
+double hypoC = Math.sqrt(Math.pow(legA, 2) + Math.pow(legB, 2));<br>
+NumberFormat nf = NumberFormat.getNumberInstance();<br>
 textField_2.setText(nf.format(hypoC));</code>
 
 <h2>Contributing to the Pythagorean Theorem Solver</h2>
