@@ -17,7 +17,7 @@ The program is based on a simple equation:<br>
 <code>NumberFormat nf = NumberFormat.getNumberInstance();</code><br>
 <code>textField_2.setText(nf.format(hypoC));</code>
 
-<h2>Contributing to the Pythagorean Theorem Solver</h2>
+<h2>Contributing</h2>
 <h3>Reporting issues</h3>
 Please read the following guidelines before opening any <a href="https://github.com/astarks173362/Pythagorean-Theorem-Solver/issues">issue</a>:
 <ol>
