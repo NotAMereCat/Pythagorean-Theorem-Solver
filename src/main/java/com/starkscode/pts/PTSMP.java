@@ -28,7 +28,7 @@ public class PTSMP extends JPanel {
 	private JButton button_2;
 	private JButton button_3;
 
-	NumberFormat nf = NumberFormat.getNumberInstance();
+	public static NumberFormat nf = NumberFormat.getNumberInstance();
 
 	public PTSMP() {
 		setLayout(null);
