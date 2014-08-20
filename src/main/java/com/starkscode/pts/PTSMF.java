@@ -3,7 +3,6 @@ package com.starkscode.pts;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import javax.swing.UIManager;
 
 @SuppressWarnings("serial")
 public class PTSMF extends JFrame {
@@ -21,19 +20,13 @@ public class PTSMF extends JFrame {
 				}
 			}
 		});
-		try {
-			UIManager
-					.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 	}
 
 	public PTSMF() {
 		setTitle("Pythagorean Theorem Solver");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 379, 121);
+		setBounds(100, 100, 407, 122);
 		setLocationRelativeTo(null);
 		Panel = new PTSMP();
 		setContentPane(Panel);
