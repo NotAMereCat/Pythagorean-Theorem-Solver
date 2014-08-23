@@ -37,7 +37,7 @@ public class PTSMF extends JFrame {
 		setTitle("Pythagorean Theorem Solver");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 407, 147);
+		setBounds(100, 100, 407, 148);
 		setLocationRelativeTo(null);
 		PTSMP = new PTSMP();
 		setContentPane(PTSMP);

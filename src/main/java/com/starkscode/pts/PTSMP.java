@@ -37,15 +37,18 @@ public class PTSMP extends JPanel {
 		setLayout(null);
 
 		label = new JLabel("Leg (a)");
+		label.setFont(new Font("Arial", Font.BOLD, 12));
 		label.setBounds(43, 5, 40, 14);
 		add(label);
 
 		label_1 = new JLabel("Leg (b)");
+		label_1.setFont(new Font("Arial", Font.BOLD, 12));
 		label_1.setBounds(163, 5, 41, 14);
 		add(label_1);
 
 		label_2 = new JLabel("Hypotenuse (c)");
-		label_2.setBounds(261, 5, 86, 14);
+		label_2.setFont(new Font("Arial", Font.BOLD, 12));
+		label_2.setBounds(260, 5, 86, 14);
 		add(label_2);
 
 		textField = new JTextField(15);
