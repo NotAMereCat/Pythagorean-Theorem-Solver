@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.NumberFormat;
 
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -31,7 +32,7 @@ public class PTSMP extends JPanel {
 
 	private JCheckBox checkBox;
 
-	public static NumberFormat nf = NumberFormat.getNumberInstance();
+	private static NumberFormat nf = NumberFormat.getNumberInstance();
 
 	public PTSMP() {
 		setLayout(null);
@@ -71,30 +72,34 @@ public class PTSMP extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				if (checkBox.isSelected()) {
 					if (textField.getText().equals("")) {
+						Icon icon = new ImageIcon(PTSMP.class
+								.getResource("/assets/pts/images/legA.png"));
 						double hypoC = Double.parseDouble(textField_2.getText());
 						double legB = Double.parseDouble(textField_1.getText());
 						double legA = Math.sqrt(Math.pow(hypoC, 2)
 								- Math.pow(legB, 2));
 						textField.setText(nf.format(legA));
 						JOptionPane.showMessageDialog(null, "Leg (a) equals "
-								+ nf.format(legA),
-								"Pythagorean Theorem Solver: Answers",
-								JOptionPane.PLAIN_MESSAGE, null);
+								+ nf.format(legA), "Leg (a)",
+								JOptionPane.PLAIN_MESSAGE, icon);
 
 					}
 					if (textField_1.getText().equals("")) {
+						Icon icon = new ImageIcon(PTSMP.class
+								.getResource("/assets/pts/images/legB.png"));
 						double hypoC = Double.parseDouble(textField_2.getText());
 						double legA = Double.parseDouble(textField.getText());
 						double legB = Math.sqrt(Math.pow(hypoC, 2)
 								- Math.pow(legA, 2));
 						textField_1.setText(nf.format(legB));
 						JOptionPane.showMessageDialog(null, "Leg (b) equals "
-								+ nf.format(legB),
-								"Pythagorean Theorem Solver: Answers",
-								JOptionPane.PLAIN_MESSAGE, null);
+								+ nf.format(legB), "Leg (b)",
+								JOptionPane.PLAIN_MESSAGE, icon);
 
 					}
 					if (textField_2.getText().equals("")) {
+						Icon icon = new ImageIcon(PTSMP.class
+								.getResource("/assets/pts/images/hypoC.png"));
 						double legA = Double.parseDouble(textField.getText());
 						double legB = Double.parseDouble(textField_1.getText());
 						double hypoC = Math.sqrt(Math.pow(legA, 2)
@@ -102,8 +107,8 @@ public class PTSMP extends JPanel {
 						textField_2.setText(nf.format(hypoC));
 						JOptionPane.showMessageDialog(null,
 								"Hypotenuse (c) equals " + nf.format(hypoC),
-								"Pythagorean Theorem Solver: Answers",
-								JOptionPane.PLAIN_MESSAGE, null);
+								"Hypotenuse (c)", JOptionPane.PLAIN_MESSAGE,
+								icon);
 					}
 				} else {
 					if (textField.getText().equals("")) {
