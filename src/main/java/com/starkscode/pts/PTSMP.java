@@ -17,18 +17,9 @@ import javax.swing.JTextField;
 @SuppressWarnings("serial")
 public class PTSMP extends JPanel {
 
-	private JLabel label;
-	private JLabel label_1;
-	private JLabel label_2;
-
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
-
-	private JButton button;
-	private JButton button_1;
-	private JButton button_2;
-	private JButton button_3;
 
 	private JCheckBox checkBox;
 
@@ -37,17 +28,17 @@ public class PTSMP extends JPanel {
 	public PTSMP() {
 		setLayout(null);
 
-		label = new JLabel("Leg (a)");
+		JLabel label = new JLabel("Leg (a)");
 		label.setFont(new Font("Arial", Font.BOLD, 12));
 		label.setBounds(43, 5, 40, 14);
 		add(label);
 
-		label_1 = new JLabel("Leg (b)");
+		JLabel label_1 = new JLabel("Leg (b)");
 		label_1.setFont(new Font("Arial", Font.BOLD, 12));
 		label_1.setBounds(163, 5, 41, 14);
 		add(label_1);
 
-		label_2 = new JLabel("Hypotenuse (c)");
+		JLabel label_2 = new JLabel("Hypotenuse (c)");
 		label_2.setFont(new Font("Arial", Font.BOLD, 12));
 		label_2.setBounds(260, 5, 86, 14);
 		add(label_2);
@@ -64,7 +55,7 @@ public class PTSMP extends JPanel {
 		textField_2.setBounds(250, 25, 107, 24);
 		add(textField_2);
 
-		button = new JButton("SOLVE");
+		JButton button = new JButton("SOLVE");
 		button.setFont(new Font("Arial", Font.BOLD, 14));
 		button.setIcon(new ImageIcon(PTSMP.class
 				.getResource("/assets/pts/images/solve.png")));
@@ -138,7 +129,7 @@ public class PTSMP extends JPanel {
 		button.setBounds(10, 60, 107, 24);
 		add(button);
 
-		button_1 = new JButton("RESET");
+		JButton button_1 = new JButton("RESET");
 		button_1.setFont(new Font("Arial", Font.BOLD, 14));
 		button_1.setIcon(new ImageIcon(PTSMP.class
 				.getResource("/assets/pts/images/reset.png")));
@@ -152,7 +143,7 @@ public class PTSMP extends JPanel {
 		button_1.setBounds(130, 60, 107, 24);
 		add(button_1);
 
-		button_2 = new JButton("GITHUB");
+		JButton button_2 = new JButton("GITHUB");
 		button_2.setFont(new Font("Arial", Font.BOLD, 14));
 		button_2.setIcon(new ImageIcon(PTSMP.class
 				.getResource("/assets/pts/images/github.png")));
@@ -171,7 +162,7 @@ public class PTSMP extends JPanel {
 		button_2.setBounds(250, 60, 107, 24);
 		add(button_2);
 
-		button_3 = new JButton();
+		JButton button_3 = new JButton();
 		button_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String html = "<html><body width=";

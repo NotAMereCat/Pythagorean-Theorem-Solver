@@ -8,7 +8,7 @@ import javax.swing.UIManager;
 @SuppressWarnings("serial")
 public class PTSMF extends JFrame {
 
-	private PTSMP PTSMP;
+	private PTSMP Panel;
 
 	protected void setLookAndFeel() {
 		try {
@@ -39,7 +39,7 @@ public class PTSMF extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 407, 148);
 		setLocationRelativeTo(null);
-		PTSMP = new PTSMP();
-		setContentPane(PTSMP);
+		Panel = new PTSMP();
+		setContentPane(Panel);
 	}
 }
