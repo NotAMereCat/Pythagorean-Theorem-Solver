@@ -165,20 +165,17 @@ public class PTSMP extends JPanel {
 		JButton button_3 = new JButton();
 		button_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String html = "<html><body width=";
-				String message = "<h3>How to solve for Leg (a)</h3>"
-						+ "<p>If you are trying to solve for leg (a) then you need to have the lengths of the hypotenuse (c) and leg (b). Put those lengths in the boxes marked 'Hypotenuse (c)' and 'Leg (b)' then hit solve. Make sure the hypotenuse is the larger number or you will receive 'NaN' for an answer.<br><br>"
-						+ "<h3>How to solve for Leg (b)</h3>"
-						+ "<p>If you are trying to solve for leg (b) then you need to have the lengths of the hypotenuse (c) and leg (a). Put those lengths in the boxes marked 'Hypotenuse (c)' and 'Leg (a)' then hit solve. Make sure the hypotenuse is the larger number or you will receive 'NaN' for an answer.<br><br>"
-						+ "<h3>How to solve for Hypotenuse (c)</h3>"
-						+ "<p>If you are trying to solve for the hypotenuse (c) then you need to have the lengths of leg (a) and leg (b). Put those lengths in the boxes marked 'Leg (a)' and 'Leg (b)' then hit solve.<br><br>";
-
-				int width = 400;
-				String popup = html + width + message;
-
-				JOptionPane.showMessageDialog(null, popup,
-						"Pythagorean Theorem Solver: Help",
-						JOptionPane.PLAIN_MESSAGE, null);
+				JOptionPane
+						.showMessageDialog(
+								null,
+								"<html><h3>How to solve for Leg (a)</h3>"
+										+ "<p>If you are trying to solve for leg (a) then you need to have the lengths<br>of the hypotenuse (c) and leg (b). Put those lengths in the boxes<br>marked 'Hypotenuse (c)' and 'Leg (b)' then hit solve. Make sure<br>the hypotenuse is the larger number or you will receive 'NaN' for an answer."
+										+ "<h3>How to solve for Leg (b)</h3>"
+										+ "<p>If you are trying to solve for leg (b) then you need to have the lengths<br>of the hypotenuse (c) and leg (a). Put those lengths in the boxes<br>marked 'Hypotenuse (c)' and 'Leg (a)' then hit solve. Make sure<br>the hypotenuse is the larger number or you will receive 'NaN' for an answer."
+										+ "<h3>How to solve for Hypotenuse (c)</h3>"
+										+ "<p>If you are trying to solve for the hypotenuse (c) then you need to have the lengths<br>of leg (a) and leg (b). Put those lengths in the boxes<br>marked 'Leg (a)' and 'Leg (b)' then hit solve.</html>",
+								"Pythagorean Theorem Solver: Help",
+								JOptionPane.PLAIN_MESSAGE, null);
 			}
 		});
 		button_3.setIcon(new ImageIcon(PTSMP.class
