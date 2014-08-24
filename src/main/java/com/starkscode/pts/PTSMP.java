@@ -3,25 +3,31 @@ package com.starkscode.pts;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.text.NumberFormat;
 
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 
 @SuppressWarnings("serial")
 public class PTSMP extends JPanel {
 
+	private JLabel label_3;
+	private JLabel label_4;
+	private JLabel label_5;
+	private JLabel label_6;
+
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
-
-	private JCheckBox checkBox;
 
 	private static NumberFormat nf = NumberFormat.getNumberInstance();
 
@@ -30,29 +36,115 @@ public class PTSMP extends JPanel {
 
 		JLabel label = new JLabel("Leg (a)");
 		label.setFont(new Font("Arial", Font.BOLD, 12));
-		label.setBounds(43, 5, 40, 14);
+		label.setBounds(32, 185, 40, 14);
 		add(label);
 
 		JLabel label_1 = new JLabel("Leg (b)");
 		label_1.setFont(new Font("Arial", Font.BOLD, 12));
-		label_1.setBounds(163, 5, 41, 14);
+		label_1.setBounds(128, 185, 41, 14);
 		add(label_1);
 
 		JLabel label_2 = new JLabel("Hypotenuse (c)");
 		label_2.setFont(new Font("Arial", Font.BOLD, 12));
-		label_2.setBounds(260, 5, 86, 14);
+		label_2.setBounds(202, 185, 86, 14);
 		add(label_2);
 
+		label_3 = new JLabel();
+		label_3.setIcon(new ImageIcon(PTSMP.class
+				.getResource("/assets/pts/images/triangle.png")));
+		label_3.setBounds(84, 11, 134, 134);
+		add(label_3);
+
+		label_4 = new JLabel();
+		label_4.setHorizontalAlignment(SwingConstants.RIGHT);
+		label_4.setBounds(0, 74, 76, 14);
+		add(label_4);
+
+		label_5 = new JLabel();
+		label_5.setHorizontalAlignment(SwingConstants.CENTER);
+		label_5.setBounds(0, 150, 282, 14);
+		add(label_5);
+
+		label_6 = new JLabel();
+		label_6.setBounds(169, 74, 268, 14);
+		add(label_6);
+
 		textField = new JTextField(15);
-		textField.setBounds(10, 25, 107, 24);
+		textField.setFocusable(false);
+		textField.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				textField.setFocusable(true);
+				textField.requestFocusInWindow();
+			}
+		});
+		textField.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				label_3.setIcon(new ImageIcon(PTSMP.class
+						.getResource("/assets/pts/images/legA.png")));
+			}
+
+			@Override
+			public void focusLost(FocusEvent e) {
+				label_3.setIcon(new ImageIcon(PTSMP.class
+						.getResource("/assets/pts/images/triangle.png")));
+			}
+		});
+		label.setLabelFor(textField);
+		textField.setBounds(10, 210, 86, 24);
 		add(textField);
 
 		textField_1 = new JTextField(15);
-		textField_1.setBounds(130, 25, 107, 24);
+		textField_1.setFocusable(false);
+		textField_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				textField_1.setFocusable(true);
+				textField_1.requestFocusInWindow();
+			}
+		});
+		textField_1.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				label_3.setIcon(new ImageIcon(PTSMP.class
+						.getResource("/assets/pts/images/legB.png")));
+			}
+
+			@Override
+			public void focusLost(FocusEvent e) {
+				label_3.setIcon(new ImageIcon(PTSMP.class
+						.getResource("/assets/pts/images/triangle.png")));
+			}
+		});
+		label_1.setLabelFor(textField_1);
+		textField_1.setBounds(106, 210, 86, 24);
 		add(textField_1);
 
 		textField_2 = new JTextField(15);
-		textField_2.setBounds(250, 25, 107, 24);
+		textField_2.setFocusable(false);
+		textField_2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				textField_2.setFocusable(true);
+				textField_2.requestFocusInWindow();
+			}
+		});
+		textField_2.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				label_3.setIcon(new ImageIcon(PTSMP.class
+						.getResource("/assets/pts/images/hypoC.png")));
+			}
+
+			@Override
+			public void focusLost(FocusEvent e) {
+				label_3.setIcon(new ImageIcon(PTSMP.class
+						.getResource("/assets/pts/images/triangle.png")));
+			}
+		});
+		label_2.setLabelFor(textField_2);
+		textField_2.setBounds(202, 210, 86, 24);
 		add(textField_2);
 
 		JButton button = new JButton("SOLVE");
@@ -61,72 +153,47 @@ public class PTSMP extends JPanel {
 				.getResource("/assets/pts/images/solve.png")));
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (checkBox.isSelected()) {
-					if (textField.getText().equals("")) {
-						Icon icon = new ImageIcon(PTSMP.class
-								.getResource("/assets/pts/images/legA.png"));
-						double hypoC = Double.parseDouble(textField_2.getText());
-						double legB = Double.parseDouble(textField_1.getText());
-						double legA = Math.sqrt(Math.pow(hypoC, 2)
-								- Math.pow(legB, 2));
-						textField.setText(nf.format(legA));
-						JOptionPane.showMessageDialog(null, "Leg (a) equals "
-								+ nf.format(legA), "Leg (a)",
-								JOptionPane.PLAIN_MESSAGE, icon);
+				if (textField.getText().equals("")) {
+					double hypoC = Double.parseDouble(textField_2.getText());
+					double legB = Double.parseDouble(textField_1.getText());
+					double legA = Math.sqrt(Math.pow(hypoC, 2)
+							- Math.pow(legB, 2));
+					textField.setText(nf.format(legA));
+					label_3.setIcon(new ImageIcon(PTSMP.class
+							.getResource("/assets/pts/images/legA.png")));
+					label_4.setText(nf.format(legA));
+					label_5.setText(nf.format(legB));
+					label_6.setText(nf.format(hypoC));
 
-					}
-					if (textField_1.getText().equals("")) {
-						Icon icon = new ImageIcon(PTSMP.class
-								.getResource("/assets/pts/images/legB.png"));
-						double hypoC = Double.parseDouble(textField_2.getText());
-						double legA = Double.parseDouble(textField.getText());
-						double legB = Math.sqrt(Math.pow(hypoC, 2)
-								- Math.pow(legA, 2));
-						textField_1.setText(nf.format(legB));
-						JOptionPane.showMessageDialog(null, "Leg (b) equals "
-								+ nf.format(legB), "Leg (b)",
-								JOptionPane.PLAIN_MESSAGE, icon);
+				}
+				if (textField_1.getText().equals("")) {
+					double hypoC = Double.parseDouble(textField_2.getText());
+					double legA = Double.parseDouble(textField.getText());
+					double legB = Math.sqrt(Math.pow(hypoC, 2)
+							- Math.pow(legA, 2));
+					textField_1.setText(nf.format(legB));
+					label_3.setIcon(new ImageIcon(PTSMP.class
+							.getResource("/assets/pts/images/legB.png")));
+					label_4.setText(nf.format(legA));
+					label_5.setText(nf.format(legB));
+					label_6.setText(nf.format(hypoC));
 
-					}
-					if (textField_2.getText().equals("")) {
-						Icon icon = new ImageIcon(PTSMP.class
-								.getResource("/assets/pts/images/hypoC.png"));
-						double legA = Double.parseDouble(textField.getText());
-						double legB = Double.parseDouble(textField_1.getText());
-						double hypoC = Math.sqrt(Math.pow(legA, 2)
-								+ Math.pow(legB, 2));
-						textField_2.setText(nf.format(hypoC));
-						JOptionPane.showMessageDialog(null,
-								"Hypotenuse (c) equals " + nf.format(hypoC),
-								"Hypotenuse (c)", JOptionPane.PLAIN_MESSAGE,
-								icon);
-					}
-				} else {
-					if (textField.getText().equals("")) {
-						double hypoC = Double.parseDouble(textField_2.getText());
-						double legB = Double.parseDouble(textField_1.getText());
-						double legA = Math.sqrt(Math.pow(hypoC, 2)
-								- Math.pow(legB, 2));
-						textField.setText(nf.format(legA));
-					}
-					if (textField_1.getText().equals("")) {
-						double hypoC = Double.parseDouble(textField_2.getText());
-						double legA = Double.parseDouble(textField.getText());
-						double legB = Math.sqrt(Math.pow(hypoC, 2)
-								- Math.pow(legA, 2));
-						textField_1.setText(nf.format(legB));
-					}
-					if (textField_2.getText().equals("")) {
-						double legA = Double.parseDouble(textField.getText());
-						double legB = Double.parseDouble(textField_1.getText());
-						double hypoC = Math.sqrt(Math.pow(legA, 2)
-								+ Math.pow(legB, 2));
-						textField_2.setText(nf.format(hypoC));
-					}
+				}
+				if (textField_2.getText().equals("")) {
+					double legA = Double.parseDouble(textField.getText());
+					double legB = Double.parseDouble(textField_1.getText());
+					double hypoC = Math.sqrt(Math.pow(legA, 2)
+							+ Math.pow(legB, 2));
+					textField_2.setText(nf.format(hypoC));
+					label_3.setIcon(new ImageIcon(PTSMP.class
+							.getResource("/assets/pts/images/hypoC.png")));
+					label_4.setText(nf.format(legA));
+					label_5.setText(nf.format(legB));
+					label_6.setText(nf.format(hypoC));
 				}
 			}
 		});
-		button.setBounds(10, 60, 107, 24);
+		button.setBounds(10, 245, 107, 24);
 		add(button);
 
 		JButton button_1 = new JButton("RESET");
@@ -138,12 +205,18 @@ public class PTSMP extends JPanel {
 				textField.setText("");
 				textField_1.setText("");
 				textField_2.setText("");
+				label_4.setText("");
+				label_5.setText("");
+				label_6.setText("");
+				label_3.setIcon(new ImageIcon(PTSMP.class
+						.getResource("/assets/pts/images/triangle.png")));
 			}
 		});
-		button_1.setBounds(130, 60, 107, 24);
+		button_1.setBounds(123, 245, 107, 24);
 		add(button_1);
 
-		JButton button_2 = new JButton("GITHUB");
+		JButton button_2 = new JButton();
+		button_2.setToolTipText("GitHub Repository");
 		button_2.setFont(new Font("Arial", Font.BOLD, 14));
 		button_2.setIcon(new ImageIcon(PTSMP.class
 				.getResource("/assets/pts/images/github.png")));
@@ -159,12 +232,21 @@ public class PTSMP extends JPanel {
 				}
 			}
 		});
-		button_2.setBounds(250, 60, 107, 24);
+		button_2.setBounds(236, 245, 23, 24);
 		add(button_2);
 
 		JButton button_3 = new JButton();
+		button_3.setToolTipText("Pythagorean Theorem and Program Help");
 		button_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				try {
+					java.awt.Desktop
+							.getDesktop()
+							.browse(java.net.URI
+									.create("https://en.wikipedia.org/wiki/Pythagorean_theorem"));
+				} catch (Exception exception) {
+					exception.printStackTrace();
+				}
 				JOptionPane
 						.showMessageDialog(
 								null,
@@ -180,12 +262,7 @@ public class PTSMP extends JPanel {
 		});
 		button_3.setIcon(new ImageIcon(PTSMP.class
 				.getResource("/assets/pts/images/help.png")));
-		button_3.setBounds(368, 60, 23, 24);
+		button_3.setBounds(265, 245, 23, 24);
 		add(button_3);
-
-		checkBox = new JCheckBox("Show answer popups");
-		checkBox.setBounds(10, 90, 142, 23);
-		checkBox.setSelected(true);
-		add(checkBox);
 	}
 }
