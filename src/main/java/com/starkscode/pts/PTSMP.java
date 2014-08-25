@@ -84,12 +84,6 @@ public class PTSMP extends JPanel {
 				label_3.setIcon(new ImageIcon(PTSMP.class
 						.getResource("/assets/pts/images/legA.png")));
 			}
-
-			@Override
-			public void focusLost(FocusEvent e) {
-				label_3.setIcon(new ImageIcon(PTSMP.class
-						.getResource("/assets/pts/images/triangle.png")));
-			}
 		});
 		label.setLabelFor(textField);
 		textField.setBounds(10, 210, 86, 24);
@@ -110,12 +104,6 @@ public class PTSMP extends JPanel {
 				label_3.setIcon(new ImageIcon(PTSMP.class
 						.getResource("/assets/pts/images/legB.png")));
 			}
-
-			@Override
-			public void focusLost(FocusEvent e) {
-				label_3.setIcon(new ImageIcon(PTSMP.class
-						.getResource("/assets/pts/images/triangle.png")));
-			}
 		});
 		label_1.setLabelFor(textField_1);
 		textField_1.setBounds(106, 210, 86, 24);
@@ -135,12 +123,6 @@ public class PTSMP extends JPanel {
 			public void focusGained(FocusEvent e) {
 				label_3.setIcon(new ImageIcon(PTSMP.class
 						.getResource("/assets/pts/images/hypoC.png")));
-			}
-
-			@Override
-			public void focusLost(FocusEvent e) {
-				label_3.setIcon(new ImageIcon(PTSMP.class
-						.getResource("/assets/pts/images/triangle.png")));
 			}
 		});
 		label_2.setLabelFor(textField_2);
