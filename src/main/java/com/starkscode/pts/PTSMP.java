@@ -62,11 +62,11 @@ public class PTSMP extends JPanel {
 
 		label_5 = new JLabel();
 		label_5.setHorizontalAlignment(SwingConstants.CENTER);
-		label_5.setBounds(0, 150, 282, 14);
+		label_5.setBounds(0, 147, 282, 14);
 		add(label_5);
 
 		label_6 = new JLabel();
-		label_6.setBounds(169, 74, 268, 14);
+		label_6.setBounds(168, 74, 268, 14);
 		add(label_6);
 
 		textField = new JTextField(15);
