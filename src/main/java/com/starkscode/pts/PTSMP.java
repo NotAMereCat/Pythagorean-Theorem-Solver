@@ -57,7 +57,7 @@ public class PTSMP extends JPanel {
 
 		label_4 = new JLabel();
 		label_4.setHorizontalAlignment(SwingConstants.RIGHT);
-		label_4.setBounds(0, 74, 76, 14);
+		label_4.setBounds(0, 74, 79, 14);
 		add(label_4);
 
 		label_5 = new JLabel();
