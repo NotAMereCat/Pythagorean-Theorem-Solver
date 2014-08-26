@@ -49,23 +49,25 @@ public class PTSMP extends JPanel {
 		label_2.setBounds(202, 185, 86, 14);
 		add(label_2);
 
-		label_3 = new JLabel();
-		label_3.setIcon(new ImageIcon(PTSMP.class
-				.getResource("/assets/pts/images/triangle.png")));
+		label_3 = new JLabel(new ImageIcon(
+				PTSMP.class.getResource("/assets/pts/images/triangle.png")));
 		label_3.setBounds(84, 11, 134, 134);
 		add(label_3);
 
 		label_4 = new JLabel();
+		label_4.setFont(new Font("Arial", Font.PLAIN, 12));
 		label_4.setHorizontalAlignment(SwingConstants.RIGHT);
 		label_4.setBounds(0, 74, 79, 14);
 		add(label_4);
 
 		label_5 = new JLabel();
+		label_5.setFont(new Font("Arial", Font.PLAIN, 12));
 		label_5.setHorizontalAlignment(SwingConstants.CENTER);
 		label_5.setBounds(0, 147, 282, 14);
 		add(label_5);
 
 		label_6 = new JLabel();
+		label_6.setFont(new Font("Arial", Font.PLAIN, 12));
 		label_6.setBounds(168, 74, 268, 14);
 		add(label_6);
 
