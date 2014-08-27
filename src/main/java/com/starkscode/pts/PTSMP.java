@@ -201,7 +201,6 @@ public class PTSMP extends JPanel {
 
 		JButton button_2 = new JButton();
 		button_2.setToolTipText("GitHub Repository");
-		button_2.setFont(new Font("Arial", Font.BOLD, 14));
 		button_2.setIcon(new ImageIcon(PTSMP.class
 				.getResource("/assets/pts/images/github.png")));
 		button_2.addActionListener(new ActionListener() {
