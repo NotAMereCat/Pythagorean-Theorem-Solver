@@ -5,6 +5,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.text.NumberFormat;
@@ -72,6 +74,14 @@ public class PTSMP extends JPanel {
 		add(label_6);
 
 		textField = new JTextField(15);
+		textField.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+					solve();
+				}
+			}
+		});
 		textField.setFocusable(false);
 		textField.addMouseListener(new MouseAdapter() {
 			@Override
@@ -92,6 +102,14 @@ public class PTSMP extends JPanel {
 		add(textField);
 
 		textField_1 = new JTextField(15);
+		textField_1.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+					solve();
+				}
+			}
+		});
 		textField_1.setFocusable(false);
 		textField_1.addMouseListener(new MouseAdapter() {
 			@Override
@@ -112,6 +130,14 @@ public class PTSMP extends JPanel {
 		add(textField_1);
 
 		textField_2 = new JTextField(15);
+		textField_2.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+					solve();
+				}
+			}
+		});
 		textField_2.setFocusable(false);
 		textField_2.addMouseListener(new MouseAdapter() {
 			@Override
@@ -137,44 +163,7 @@ public class PTSMP extends JPanel {
 				.getResource("/assets/pts/images/solve.png")));
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (textField.getText().equals("")) {
-					double hypoC = Double.parseDouble(textField_2.getText());
-					double legB = Double.parseDouble(textField_1.getText());
-					double legA = Math.sqrt(Math.pow(hypoC, 2)
-							- Math.pow(legB, 2));
-					textField.setText(nf.format(legA));
-					label_3.setIcon(new ImageIcon(PTSMP.class
-							.getResource("/assets/pts/images/legA.png")));
-					label_4.setText(nf.format(legA));
-					label_5.setText(nf.format(legB));
-					label_6.setText(nf.format(hypoC));
-
-				}
-				if (textField_1.getText().equals("")) {
-					double hypoC = Double.parseDouble(textField_2.getText());
-					double legA = Double.parseDouble(textField.getText());
-					double legB = Math.sqrt(Math.pow(hypoC, 2)
-							- Math.pow(legA, 2));
-					textField_1.setText(nf.format(legB));
-					label_3.setIcon(new ImageIcon(PTSMP.class
-							.getResource("/assets/pts/images/legB.png")));
-					label_4.setText(nf.format(legA));
-					label_5.setText(nf.format(legB));
-					label_6.setText(nf.format(hypoC));
-
-				}
-				if (textField_2.getText().equals("")) {
-					double legA = Double.parseDouble(textField.getText());
-					double legB = Double.parseDouble(textField_1.getText());
-					double hypoC = Math.sqrt(Math.pow(legA, 2)
-							+ Math.pow(legB, 2));
-					textField_2.setText(nf.format(hypoC));
-					label_3.setIcon(new ImageIcon(PTSMP.class
-							.getResource("/assets/pts/images/hypoC.png")));
-					label_4.setText(nf.format(legA));
-					label_5.setText(nf.format(legB));
-					label_6.setText(nf.format(hypoC));
-				}
+				solve();
 			}
 		});
 		button.setBounds(10, 245, 107, 24);
@@ -247,5 +236,43 @@ public class PTSMP extends JPanel {
 				.getResource("/assets/pts/images/help.png")));
 		button_3.setBounds(265, 245, 23, 24);
 		add(button_3);
+	}
+
+	public void solve() {
+		if (textField.getText().equals("")) {
+			double hypoC = Double.parseDouble(textField_2.getText());
+			double legB = Double.parseDouble(textField_1.getText());
+			double legA = Math.sqrt(Math.pow(hypoC, 2) - Math.pow(legB, 2));
+			textField.setText(nf.format(legA));
+			label_3.setIcon(new ImageIcon(PTSMP.class
+					.getResource("/assets/pts/images/legA.png")));
+			label_4.setText(nf.format(legA));
+			label_5.setText(nf.format(legB));
+			label_6.setText(nf.format(hypoC));
+
+		}
+		if (textField_1.getText().equals("")) {
+			double hypoC = Double.parseDouble(textField_2.getText());
+			double legA = Double.parseDouble(textField.getText());
+			double legB = Math.sqrt(Math.pow(hypoC, 2) - Math.pow(legA, 2));
+			textField_1.setText(nf.format(legB));
+			label_3.setIcon(new ImageIcon(PTSMP.class
+					.getResource("/assets/pts/images/legB.png")));
+			label_4.setText(nf.format(legA));
+			label_5.setText(nf.format(legB));
+			label_6.setText(nf.format(hypoC));
+
+		}
+		if (textField_2.getText().equals("")) {
+			double legA = Double.parseDouble(textField.getText());
+			double legB = Double.parseDouble(textField_1.getText());
+			double hypoC = Math.sqrt(Math.pow(legA, 2) + Math.pow(legB, 2));
+			textField_2.setText(nf.format(hypoC));
+			label_3.setIcon(new ImageIcon(PTSMP.class
+					.getResource("/assets/pts/images/hypoC.png")));
+			label_4.setText(nf.format(legA));
+			label_5.setText(nf.format(legB));
+			label_6.setText(nf.format(hypoC));
+		}
 	}
 }
