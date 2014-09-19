@@ -9,6 +9,8 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.text.NumberFormat;
 
 import javax.swing.ImageIcon;
@@ -249,6 +251,14 @@ public class PTSMP extends JPanel {
 			label_4.setText(nf.format(legA));
 			label_5.setText(nf.format(legB));
 			label_6.setText(nf.format(hypoC));
+			try {
+				PrintWriter history = new PrintWriter(new FileWriter(
+						"history.txt", true));
+				history.append(legA + "² + " + legB + "² = " + hypoC + "²\n");
+				history.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 
 		}
 		if (textField_1.getText().equals("")) {
@@ -261,6 +271,14 @@ public class PTSMP extends JPanel {
 			label_4.setText(nf.format(legA));
 			label_5.setText(nf.format(legB));
 			label_6.setText(nf.format(hypoC));
+			try {
+				PrintWriter history = new PrintWriter(new FileWriter(
+						"history.txt", true));
+				history.append(legA + "² + " + legB + "² = " + hypoC + "²\n");
+				history.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 
 		}
 		if (textField_2.getText().equals("")) {
@@ -273,6 +291,14 @@ public class PTSMP extends JPanel {
 			label_4.setText(nf.format(legA));
 			label_5.setText(nf.format(legB));
 			label_6.setText(nf.format(hypoC));
+			try {
+				PrintWriter history = new PrintWriter(new FileWriter(
+						"history.txt", true));
+				history.append(legA + "² + " + legB + "² = " + hypoC + "²\n");
+				history.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}
 }
