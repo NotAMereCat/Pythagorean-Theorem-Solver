@@ -254,7 +254,7 @@ public class PTSMP extends JPanel {
 			try {
 				PrintWriter history = new PrintWriter(new FileWriter(
 						"history.txt", true));
-				history.append(legA + "² + " + legB + "² = " + hypoC + "²\n");
+				history.append(hypoC + "² - " + legB + "² = " + legA + "²\n");
 				history.close();
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -274,7 +274,7 @@ public class PTSMP extends JPanel {
 			try {
 				PrintWriter history = new PrintWriter(new FileWriter(
 						"history.txt", true));
-				history.append(legA + "² + " + legB + "² = " + hypoC + "²\n");
+				history.append(hypoC + "² - " + legA + "² = " + legB + "²\n");
 				history.close();
 			} catch (Exception e) {
 				e.printStackTrace();
