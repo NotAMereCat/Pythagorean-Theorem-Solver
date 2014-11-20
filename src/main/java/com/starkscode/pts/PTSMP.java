@@ -52,7 +52,7 @@ public class PTSMP extends JPanel {
 
 		JLabel label_2 = new JLabel("Hypotenuse (c)");
 		label_2.setFont(new Font("Arial", Font.BOLD, 12));
-		label_2.setBounds(202, 185, 86, 14);
+		label_2.setBounds(202, 185, 90, 14);
 		add(label_2);
 
 		label_3 = new JLabel(new ImageIcon(
