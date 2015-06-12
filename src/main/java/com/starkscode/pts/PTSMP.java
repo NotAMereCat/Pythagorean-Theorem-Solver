@@ -202,7 +202,7 @@ public class PTSMP extends JPanel {
 					java.awt.Desktop
 							.getDesktop()
 							.browse(java.net.URI
-									.create("https://github.com/astarks173362/Pythagorean-Theorem-Solver"));
+									.create("https://github.com/NotAMereCat/Pythagorean-Theorem-Solver"));
 				} catch (Exception exception) {
 					exception.printStackTrace();
 				}
