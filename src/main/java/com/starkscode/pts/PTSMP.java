@@ -9,8 +9,6 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.FileWriter;
-import java.io.PrintWriter;
 import java.text.NumberFormat;
 
 import javax.swing.ImageIcon;
@@ -35,8 +33,6 @@ public class PTSMP extends JPanel {
 
 	private static NumberFormat nf = NumberFormat.getNumberInstance();
 
-	private static String newLine = System.getProperty("line.separator");
-
 	public PTSMP() {
 		setLayout(null);
 
@@ -55,8 +51,7 @@ public class PTSMP extends JPanel {
 		label_2.setBounds(202, 185, 90, 14);
 		add(label_2);
 
-		label_3 = new JLabel(new ImageIcon(
-				PTSMP.class.getResource("/assets/pts/images/triangle.png")));
+		label_3 = new JLabel(new ImageIcon(PTSMP.class.getResource("/assets/pts/images/triangle.png")));
 		label_3.setBounds(84, 11, 134, 134);
 		add(label_3);
 
@@ -97,8 +92,7 @@ public class PTSMP extends JPanel {
 		textField.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusGained(FocusEvent e) {
-				label_3.setIcon(new ImageIcon(PTSMP.class
-						.getResource("/assets/pts/images/legA.png")));
+				label_3.setIcon(new ImageIcon(PTSMP.class.getResource("/assets/pts/images/legA.png")));
 			}
 		});
 		label.setLabelFor(textField);
@@ -125,8 +119,7 @@ public class PTSMP extends JPanel {
 		textField_1.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusGained(FocusEvent e) {
-				label_3.setIcon(new ImageIcon(PTSMP.class
-						.getResource("/assets/pts/images/legB.png")));
+				label_3.setIcon(new ImageIcon(PTSMP.class.getResource("/assets/pts/images/legB.png")));
 			}
 		});
 		label_1.setLabelFor(textField_1);
@@ -153,8 +146,7 @@ public class PTSMP extends JPanel {
 		textField_2.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusGained(FocusEvent e) {
-				label_3.setIcon(new ImageIcon(PTSMP.class
-						.getResource("/assets/pts/images/hypoC.png")));
+				label_3.setIcon(new ImageIcon(PTSMP.class.getResource("/assets/pts/images/hypoC.png")));
 			}
 		});
 		label_2.setLabelFor(textField_2);
@@ -163,8 +155,7 @@ public class PTSMP extends JPanel {
 
 		JButton button = new JButton("SOLVE");
 		button.setFont(new Font("Arial", Font.BOLD, 14));
-		button.setIcon(new ImageIcon(PTSMP.class
-				.getResource("/assets/pts/images/solve.png")));
+		button.setIcon(new ImageIcon(PTSMP.class.getResource("/assets/pts/images/solve.png")));
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				solve();
@@ -175,8 +166,7 @@ public class PTSMP extends JPanel {
 
 		JButton button_1 = new JButton("RESET");
 		button_1.setFont(new Font("Arial", Font.BOLD, 14));
-		button_1.setIcon(new ImageIcon(PTSMP.class
-				.getResource("/assets/pts/images/reset.png")));
+		button_1.setIcon(new ImageIcon(PTSMP.class.getResource("/assets/pts/images/reset.png")));
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				textField.setText("");
@@ -185,8 +175,7 @@ public class PTSMP extends JPanel {
 				label_4.setText("");
 				label_5.setText("");
 				label_6.setText("");
-				label_3.setIcon(new ImageIcon(PTSMP.class
-						.getResource("/assets/pts/images/triangle.png")));
+				label_3.setIcon(new ImageIcon(PTSMP.class.getResource("/assets/pts/images/triangle.png")));
 			}
 		});
 		button_1.setBounds(123, 245, 107, 24);
@@ -194,15 +183,12 @@ public class PTSMP extends JPanel {
 
 		JButton button_2 = new JButton();
 		button_2.setToolTipText("GitHub Repository");
-		button_2.setIcon(new ImageIcon(PTSMP.class
-				.getResource("/assets/pts/images/github.png")));
+		button_2.setIcon(new ImageIcon(PTSMP.class.getResource("/assets/pts/images/github.png")));
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					java.awt.Desktop
-							.getDesktop()
-							.browse(java.net.URI
-									.create("https://github.com/NotAMereCat/Pythagorean-Theorem-Solver"));
+					java.awt.Desktop.getDesktop()
+							.browse(java.net.URI.create("https://github.com/starkskrats/Pythagorean-Theorem-Solver"));
 				} catch (Exception exception) {
 					exception.printStackTrace();
 				}
@@ -216,28 +202,22 @@ public class PTSMP extends JPanel {
 		button_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					java.awt.Desktop
-							.getDesktop()
-							.browse(java.net.URI
-									.create("https://en.wikipedia.org/wiki/Pythagorean_theorem"));
+					java.awt.Desktop.getDesktop()
+							.browse(java.net.URI.create("https://en.wikipedia.org/wiki/Pythagorean_theorem"));
 				} catch (Exception exception) {
 					exception.printStackTrace();
 				}
-				JOptionPane
-						.showMessageDialog(
-								null,
-								"<html><h3>How to solve for Leg (a)</h3>"
-										+ "<p>If you are trying to solve for leg (a) then you need to have the lengths<br>of the hypotenuse (c) and leg (b). Put those lengths in the boxes<br>marked 'Hypotenuse (c)' and 'Leg (b)' then hit solve. Make sure<br>the hypotenuse is the larger number or you will receive 'NaN' for an answer."
-										+ "<h3>How to solve for Leg (b)</h3>"
-										+ "<p>If you are trying to solve for leg (b) then you need to have the lengths<br>of the hypotenuse (c) and leg (a). Put those lengths in the boxes<br>marked 'Hypotenuse (c)' and 'Leg (a)' then hit solve. Make sure<br>the hypotenuse is the larger number or you will receive 'NaN' for an answer."
-										+ "<h3>How to solve for Hypotenuse (c)</h3>"
-										+ "<p>If you are trying to solve for the hypotenuse (c) then you need to have the lengths<br>of leg (a) and leg (b). Put those lengths in the boxes<br>marked 'Leg (a)' and 'Leg (b)' then hit solve.</html>",
-								"Pythagorean Theorem Solver: Help",
-								JOptionPane.PLAIN_MESSAGE, null);
+				JOptionPane.showMessageDialog(null,
+						"<html><h3>How to solve for Leg (a)</h3>"
+								+ "<p>If you are trying to solve for leg (a) then you need to have the lengths<br>of the hypotenuse (c) and leg (b). Put those lengths in the boxes<br>marked 'Hypotenuse (c)' and 'Leg (b)' then hit solve. Make sure<br>the hypotenuse is the larger number or you will receive 'NaN' for an answer."
+								+ "<h3>How to solve for Leg (b)</h3>"
+								+ "<p>If you are trying to solve for leg (b) then you need to have the lengths<br>of the hypotenuse (c) and leg (a). Put those lengths in the boxes<br>marked 'Hypotenuse (c)' and 'Leg (a)' then hit solve. Make sure<br>the hypotenuse is the larger number or you will receive 'NaN' for an answer."
+								+ "<h3>How to solve for Hypotenuse (c)</h3>"
+								+ "<p>If you are trying to solve for the hypotenuse (c) then you need to have the lengths<br>of leg (a) and leg (b). Put those lengths in the boxes<br>marked 'Leg (a)' and 'Leg (b)' then hit solve.</html>",
+						"Pythagorean Theorem Solver: Help", JOptionPane.PLAIN_MESSAGE, null);
 			}
 		});
-		button_3.setIcon(new ImageIcon(PTSMP.class
-				.getResource("/assets/pts/images/help.png")));
+		button_3.setIcon(new ImageIcon(PTSMP.class.getResource("/assets/pts/images/help.png")));
 		button_3.setBounds(265, 245, 23, 24);
 		add(button_3);
 	}
@@ -248,62 +228,30 @@ public class PTSMP extends JPanel {
 			double legB = Double.parseDouble(textField_1.getText());
 			double legA = Math.sqrt(Math.pow(hypoC, 2) - Math.pow(legB, 2));
 			textField.setText(nf.format(legA));
-			label_3.setIcon(new ImageIcon(PTSMP.class
-					.getResource("/assets/pts/images/legA.png")));
+			label_3.setIcon(new ImageIcon(PTSMP.class.getResource("/assets/pts/images/legA.png")));
 			label_4.setText(nf.format(legA));
 			label_5.setText(nf.format(legB));
 			label_6.setText(nf.format(hypoC));
-			try {
-				PrintWriter history = new PrintWriter(new FileWriter(
-						"history.txt", true));
-				history.append(hypoC + "² - " + legB + "² = " + legA + "²"
-						+ newLine);
-				history.close();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-
 		}
 		if (textField_1.getText().equals("")) {
 			double hypoC = Double.parseDouble(textField_2.getText());
 			double legA = Double.parseDouble(textField.getText());
 			double legB = Math.sqrt(Math.pow(hypoC, 2) - Math.pow(legA, 2));
 			textField_1.setText(nf.format(legB));
-			label_3.setIcon(new ImageIcon(PTSMP.class
-					.getResource("/assets/pts/images/legB.png")));
+			label_3.setIcon(new ImageIcon(PTSMP.class.getResource("/assets/pts/images/legB.png")));
 			label_4.setText(nf.format(legA));
 			label_5.setText(nf.format(legB));
 			label_6.setText(nf.format(hypoC));
-			try {
-				PrintWriter history = new PrintWriter(new FileWriter(
-						"history.txt", true));
-				history.append(hypoC + "² - " + legA + "² = " + legB + "²"
-						+ newLine);
-				history.close();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-
 		}
 		if (textField_2.getText().equals("")) {
 			double legA = Double.parseDouble(textField.getText());
 			double legB = Double.parseDouble(textField_1.getText());
 			double hypoC = Math.sqrt(Math.pow(legA, 2) + Math.pow(legB, 2));
 			textField_2.setText(nf.format(hypoC));
-			label_3.setIcon(new ImageIcon(PTSMP.class
-					.getResource("/assets/pts/images/hypoC.png")));
+			label_3.setIcon(new ImageIcon(PTSMP.class.getResource("/assets/pts/images/hypoC.png")));
 			label_4.setText(nf.format(legA));
 			label_5.setText(nf.format(legB));
 			label_6.setText(nf.format(hypoC));
-			try {
-				PrintWriter history = new PrintWriter(new FileWriter(
-						"history.txt", true));
-				history.append(legA + "² + " + legB + "² = " + hypoC + "²"
-						+ newLine);
-				history.close();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
 		}
 	}
 }
