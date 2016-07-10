@@ -13,7 +13,7 @@ public class PTSMF extends JFrame {
 	protected void setLookAndFeel() {
 		try {
 			UIManager
-					.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+					.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
