@@ -1,4 +1,5 @@
-package com.starkscode.pts;
+package me.skrats.pts;
+
 
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -182,7 +183,6 @@ public class PTSMP extends JPanel {
 		add(button_1);
 
 		JButton button_2 = new JButton();
-		button_2.setToolTipText("GitHub Repository");
 		button_2.setIcon(new ImageIcon(PTSMP.class.getResource("/assets/pts/images/github.png")));
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -198,7 +198,6 @@ public class PTSMP extends JPanel {
 		add(button_2);
 
 		JButton button_3 = new JButton();
-		button_3.setToolTipText("Pythagorean Theorem and Program Help");
 		button_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -214,7 +213,7 @@ public class PTSMP extends JPanel {
 								+ "<p>If you are trying to solve for leg (b) then you need to have the lengths<br>of the hypotenuse (c) and leg (a). Put those lengths in the boxes<br>marked 'Hypotenuse (c)' and 'Leg (a)' then hit solve. Make sure<br>the hypotenuse is the larger number or you will receive 'NaN' for an answer."
 								+ "<h3>How to solve for Hypotenuse (c)</h3>"
 								+ "<p>If you are trying to solve for the hypotenuse (c) then you need to have the lengths<br>of leg (a) and leg (b). Put those lengths in the boxes<br>marked 'Leg (a)' and 'Leg (b)' then hit solve.</html>",
-						"Pythagorean Theorem Solver: Help", JOptionPane.PLAIN_MESSAGE, null);
+						"Help", JOptionPane.PLAIN_MESSAGE, null);
 			}
 		});
 		button_3.setIcon(new ImageIcon(PTSMP.class.getResource("/assets/pts/images/help.png")));

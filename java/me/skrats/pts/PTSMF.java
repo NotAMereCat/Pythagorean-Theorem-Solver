@@ -1,4 +1,5 @@
-package com.starkscode.pts;
+package me.skrats.pts;
+
 
 import java.awt.EventQueue;
 
