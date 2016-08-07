@@ -1,6 +1,5 @@
 package me.skrats.pts;
 
-
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,64 +14,63 @@ import java.text.NumberFormat;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 @SuppressWarnings("serial")
 public class PTSMP extends JPanel {
-
+	
 	private JLabel label_3;
 	private JLabel label_4;
 	private JLabel label_5;
 	private JLabel label_6;
-
+	
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
-
+	
 	private static NumberFormat nf = NumberFormat.getNumberInstance();
-
+	
 	public PTSMP() {
 		setLayout(null);
-
+		
 		JLabel label = new JLabel("Leg (a)");
 		label.setFont(new Font("Arial", Font.BOLD, 12));
 		label.setBounds(32, 185, 40, 14);
 		add(label);
-
+		
 		JLabel label_1 = new JLabel("Leg (b)");
 		label_1.setFont(new Font("Arial", Font.BOLD, 12));
 		label_1.setBounds(128, 185, 41, 14);
 		add(label_1);
-
+		
 		JLabel label_2 = new JLabel("Hypotenuse (c)");
 		label_2.setFont(new Font("Arial", Font.BOLD, 12));
 		label_2.setBounds(202, 185, 90, 14);
 		add(label_2);
-
+		
 		label_3 = new JLabel(new ImageIcon(PTSMP.class.getResource("/assets/pts/images/triangle.png")));
 		label_3.setBounds(84, 11, 134, 134);
 		add(label_3);
-
+		
 		label_4 = new JLabel();
 		label_4.setFont(new Font("Arial", Font.PLAIN, 12));
 		label_4.setHorizontalAlignment(SwingConstants.RIGHT);
 		label_4.setBounds(0, 74, 79, 14);
 		add(label_4);
-
+		
 		label_5 = new JLabel();
 		label_5.setFont(new Font("Arial", Font.PLAIN, 12));
 		label_5.setHorizontalAlignment(SwingConstants.CENTER);
 		label_5.setBounds(0, 147, 282, 14);
 		add(label_5);
-
+		
 		label_6 = new JLabel();
 		label_6.setFont(new Font("Arial", Font.PLAIN, 12));
 		label_6.setBounds(168, 74, 268, 14);
 		add(label_6);
-
+		
 		textField = new JTextField(15);
 		textField.addKeyListener(new KeyAdapter() {
 			@Override
@@ -99,7 +97,7 @@ public class PTSMP extends JPanel {
 		label.setLabelFor(textField);
 		textField.setBounds(10, 210, 86, 24);
 		add(textField);
-
+		
 		textField_1 = new JTextField(15);
 		textField_1.addKeyListener(new KeyAdapter() {
 			@Override
@@ -126,7 +124,7 @@ public class PTSMP extends JPanel {
 		label_1.setLabelFor(textField_1);
 		textField_1.setBounds(106, 210, 86, 24);
 		add(textField_1);
-
+		
 		textField_2 = new JTextField(15);
 		textField_2.addKeyListener(new KeyAdapter() {
 			@Override
@@ -153,7 +151,7 @@ public class PTSMP extends JPanel {
 		label_2.setLabelFor(textField_2);
 		textField_2.setBounds(202, 210, 86, 24);
 		add(textField_2);
-
+		
 		JButton button = new JButton("SOLVE");
 		button.setFont(new Font("Arial", Font.BOLD, 14));
 		button.setIcon(new ImageIcon(PTSMP.class.getResource("/assets/pts/images/solve.png")));
@@ -164,7 +162,7 @@ public class PTSMP extends JPanel {
 		});
 		button.setBounds(10, 245, 107, 24);
 		add(button);
-
+		
 		JButton button_1 = new JButton("RESET");
 		button_1.setFont(new Font("Arial", Font.BOLD, 14));
 		button_1.setIcon(new ImageIcon(PTSMP.class.getResource("/assets/pts/images/reset.png")));
@@ -181,7 +179,7 @@ public class PTSMP extends JPanel {
 		});
 		button_1.setBounds(123, 245, 107, 24);
 		add(button_1);
-
+		
 		JButton button_2 = new JButton();
 		button_2.setIcon(new ImageIcon(PTSMP.class.getResource("/assets/pts/images/github.png")));
 		button_2.addActionListener(new ActionListener() {
@@ -196,7 +194,7 @@ public class PTSMP extends JPanel {
 		});
 		button_2.setBounds(236, 245, 23, 24);
 		add(button_2);
-
+		
 		JButton button_3 = new JButton();
 		button_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -206,21 +204,13 @@ public class PTSMP extends JPanel {
 				} catch (Exception exception) {
 					exception.printStackTrace();
 				}
-				JOptionPane.showMessageDialog(null,
-						"<html><h3>How to solve for Leg (a)</h3>"
-								+ "<p>If you are trying to solve for leg (a) then you need to have the lengths<br>of the hypotenuse (c) and leg (b). Put those lengths in the boxes<br>marked 'Hypotenuse (c)' and 'Leg (b)' then hit solve. Make sure<br>the hypotenuse is the larger number or you will receive 'NaN' for an answer."
-								+ "<h3>How to solve for Leg (b)</h3>"
-								+ "<p>If you are trying to solve for leg (b) then you need to have the lengths<br>of the hypotenuse (c) and leg (a). Put those lengths in the boxes<br>marked 'Hypotenuse (c)' and 'Leg (a)' then hit solve. Make sure<br>the hypotenuse is the larger number or you will receive 'NaN' for an answer."
-								+ "<h3>How to solve for Hypotenuse (c)</h3>"
-								+ "<p>If you are trying to solve for the hypotenuse (c) then you need to have the lengths<br>of leg (a) and leg (b). Put those lengths in the boxes<br>marked 'Leg (a)' and 'Leg (b)' then hit solve.</html>",
-						"Help", JOptionPane.PLAIN_MESSAGE, null);
 			}
 		});
 		button_3.setIcon(new ImageIcon(PTSMP.class.getResource("/assets/pts/images/help.png")));
 		button_3.setBounds(265, 245, 23, 24);
 		add(button_3);
 	}
-
+	
 	public void solve() {
 		if (textField.getText().equals("")) {
 			double hypoC = Double.parseDouble(textField_2.getText());
@@ -228,9 +218,6 @@ public class PTSMP extends JPanel {
 			double legA = Math.sqrt(Math.pow(hypoC, 2) - Math.pow(legB, 2));
 			textField.setText(nf.format(legA));
 			label_3.setIcon(new ImageIcon(PTSMP.class.getResource("/assets/pts/images/legA.png")));
-			label_4.setText(nf.format(legA));
-			label_5.setText(nf.format(legB));
-			label_6.setText(nf.format(hypoC));
 		}
 		if (textField_1.getText().equals("")) {
 			double hypoC = Double.parseDouble(textField_2.getText());
@@ -238,9 +225,6 @@ public class PTSMP extends JPanel {
 			double legB = Math.sqrt(Math.pow(hypoC, 2) - Math.pow(legA, 2));
 			textField_1.setText(nf.format(legB));
 			label_3.setIcon(new ImageIcon(PTSMP.class.getResource("/assets/pts/images/legB.png")));
-			label_4.setText(nf.format(legA));
-			label_5.setText(nf.format(legB));
-			label_6.setText(nf.format(hypoC));
 		}
 		if (textField_2.getText().equals("")) {
 			double legA = Double.parseDouble(textField.getText());
@@ -248,9 +232,6 @@ public class PTSMP extends JPanel {
 			double hypoC = Math.sqrt(Math.pow(legA, 2) + Math.pow(legB, 2));
 			textField_2.setText(nf.format(hypoC));
 			label_3.setIcon(new ImageIcon(PTSMP.class.getResource("/assets/pts/images/hypoC.png")));
-			label_4.setText(nf.format(legA));
-			label_5.setText(nf.format(legB));
-			label_6.setText(nf.format(hypoC));
 		}
 	}
 }
